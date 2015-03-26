@@ -46,6 +46,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     }
 
     public interface MyView extends View {
+    	public void changeMenu(String text, String token);
     }
 
     /**
@@ -59,7 +60,8 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
                          final MyView view,
                          final MyProxy proxy) {
         super(eventBus, view, proxy, RevealType.Root);
-
+        
+        //view.changeMenu("logout", "home");
         // Making the window scroll to top on every page change
         History.addValueChangeHandler(new ValueChangeHandler<String>() {
             @Override
