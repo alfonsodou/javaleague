@@ -1,2 +1,0 @@
-serviceClass: org.javahispano.javaleague.client.GreetingService
-path: 647AA56C30DD208312BDED2250B7CE4D.gwt.rpc

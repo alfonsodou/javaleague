@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 Test set: org.javahispano.javaleague.client.GwtTestJavaleague
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.048 sec
-testGreetingService(org.javahispano.javaleague.client.GwtTestJavaleague)  Time elapsed: 14.016 sec
-testFieldVerifier(org.javahispano.javaleague.client.GwtTestJavaleague)  Time elapsed: 0.024 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.086 sec
+testGreetingService(org.javahispano.javaleague.client.GwtTestJavaleague)  Time elapsed: 15.053 sec
+testFieldVerifier(org.javahispano.javaleague.client.GwtTestJavaleague)  Time elapsed: 0.026 sec
