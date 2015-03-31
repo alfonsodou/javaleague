@@ -22,6 +22,7 @@
     <public path='resource'>
         <include name='css/*.css'/>
         <include name='js/*.js'/>
+        <include name='images/*.png'/>
     </public>
 
     <!--Add these style sheets last so that they are the most important!-->
