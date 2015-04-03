@@ -61,7 +61,6 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
                          final MyProxy proxy) {
         super(eventBus, view, proxy, RevealType.Root);
         
-        //view.changeMenu("logout", "home");
         // Making the window scroll to top on every page change
         History.addValueChangeHandler(new ValueChangeHandler<String>() {
             @Override

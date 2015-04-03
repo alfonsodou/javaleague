@@ -18,7 +18,7 @@
 	<!-- For JSR-303 Bean Validation -->
 	<inherits name="org.hibernate.validator.HibernateValidator" />
 	<replace-with
-		class="org.javahispano.javaleague.client.application.css.validation.FormsValidationFactory">
+		class="org.javahispano.javaleague.client.validation.FormsValidationFactory">
 		<when-type-is class="javax.validation.ValidatorFactory" />
 	</replace-with>
 

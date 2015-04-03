@@ -17,7 +17,7 @@ public class NameTokens {
     
     // Rules Page
     public static final String RULES = "rules";
-
+    
     // Getters for UiBinders
 
     public static String getHome() {

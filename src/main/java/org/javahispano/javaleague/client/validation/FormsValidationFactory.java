@@ -1,9 +1,11 @@
 /**
  * 
  */
-package org.javahispano.javaleague.client.application.css.validation;
+package org.javahispano.javaleague.client.validation;
 
 import javax.validation.Validator;
+
+import org.javahispano.javaleague.client.application.login.Credentials;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.validation.client.AbstractGwtValidatorFactory;

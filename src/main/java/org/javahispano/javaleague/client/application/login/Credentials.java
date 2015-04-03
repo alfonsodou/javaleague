@@ -1,4 +1,4 @@
-package org.javahispano.javaleague.client.application.css.validation;
+package org.javahispano.javaleague.client.application.login;
 
 /*
  * #%L
