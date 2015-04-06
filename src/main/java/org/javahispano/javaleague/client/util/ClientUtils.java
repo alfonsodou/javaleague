@@ -3,6 +3,7 @@ package org.javahispano.javaleague.client.util;
 
 import org.javahispano.javaleague.client.OAuth.OurCallbackUrl;
 import org.javahispano.javaleague.client.OAuth.OurProtectedUrls;
+import org.javahispano.javaleague.client.exception.OurException;
 import org.javahispano.javaleague.client.model.Credential;
 
 import com.google.gwt.user.client.Cookies;
@@ -85,7 +86,7 @@ public class ClientUtils
             return VIMEO;
         else if (authProviderName.equals("evernote"))
             return EVERNOTE;
-        else if (authProviderName.equals("tumblr."))gwtgoogleoauthtest
+        else if (authProviderName.equals("tumblr."))
             return TUMBLR;
         else if (authProviderName.equals("foursquare"))
             return FOURSQUARE;
@@ -114,7 +115,7 @@ public class ClientUtils
         else if (authProvider == WINDOWS_LIVE)
             return "Windows Live";
         else if (authProvider == INSTAGRAM)
-            return "Instagram";gwtgoogleoauthtest
+            return "Instagram";
         else if (authProvider == GITHUB)
             return "github";
         else if (authProvider == VIMEO)
@@ -142,7 +143,7 @@ public class ClientUtils
         switch(authProvider)
         {
             case FACEBOOK:
-            {gwtgoogleoauthtest
+            {
                 return OurProtectedUrls.FACEBOOK_PROTECTED_RESOURCE_URL;
             }
             
@@ -349,7 +350,7 @@ public class ClientUtils
         
         if (savedAuthProvider == DEFAULT || savedAuthProvider == UNKNOWN)
         {
-            GWTOAuthLoginDemo.get().updateLoginStatus();
+            //GWTOAuthLoginDemo.get().updateLoginStatus();
         }
  
         if (appUrl != null)
@@ -452,7 +453,7 @@ public class ClientUtils
     }
     public static void logout()
     {
-        final String sessionId = ClientUtils.getSessionIdFromCookie();
+        /*final String sessionId = ClientUtils.getSessionIdFromCookie();
         
         new MyAsyncCallback<Void>()
         {
@@ -476,7 +477,7 @@ public class ClientUtils
             {
                 OAuthLoginService.Util.getInstance().logout(sessionId,cb);
             }
-        }.go("Logging out..");
+        }.go("Logging out..");*/
     }    
 }
 

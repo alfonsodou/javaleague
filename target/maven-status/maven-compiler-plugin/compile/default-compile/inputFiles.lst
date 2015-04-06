@@ -7,6 +7,7 @@
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/OAuth/Linkedin2Api.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/util/ServerUtils.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/OAuth/InstagramToken.java
+/home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/exception/OurException.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/OAuth/Instagram2Api.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/OAuth/FacebookApiWithState.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/model/Credential.java
@@ -25,6 +26,7 @@
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/model/ServersideSession.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/application/login/CredentialsEditor.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/JavaleagueEntryPoint.java
+/home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/util/ClientUtils.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/place/NameTokens.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/client/validation/FormsValidationFactory.java
 /home/adou/git/javaleague/src/main/java/org/javahispano/javaleague/server/OAuth/OurOAuthParams.java

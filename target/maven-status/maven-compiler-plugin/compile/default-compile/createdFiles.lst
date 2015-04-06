@@ -1,5 +1,6 @@
 org/javahispano/javaleague/client/application/login/LoginPresenter$MyView.class
 org/javahispano/javaleague/client/JavaleagueEntryPoint.class
+org/javahispano/javaleague/client/util/ClientUtils.class
 org/javahispano/javaleague/client/OAuth/OurProtectedUrls.class
 org/javahispano/javaleague/client/JavaleagueClientBundle.class
 org/javahispano/javaleague/client/application/general/HomePresenter$MyProxy.class
@@ -15,6 +16,7 @@ org/javahispano/javaleague/server/OAuth/Google2Api$1.class
 org/javahispano/javaleague/client/ui/PrettyCode.class
 org/javahispano/javaleague/client/application/login/LoginPresenter.class
 org/javahispano/javaleague/server/util/ServerUtils.class
+org/javahispano/javaleague/client/exception/OurException.class
 org/javahispano/javaleague/client/application/ApplicationModule.class
 org/javahispano/javaleague/server/model/ServersideSession.class
 org/javahispano/javaleague/server/OAuth/Instagram2Api$InstagramOauthService.class
