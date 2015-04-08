@@ -45,8 +45,8 @@ org/javahispano/javaleague/client/model/SocialUser.class
 org/javahispano/javaleague/client/application/login/LoginView.class
 org/javahispano/javaleague/client/ui/constants/Styles.class
 org/javahispano/javaleague/client/application/general/HomeView.class
-org/javahispano/javaleague/client/application/ApplicationPresenter$1.class
 org/javahispano/javaleague/client/place/NameTokens.class
+org/javahispano/javaleague/client/application/ApplicationPresenter$1.class
 org/javahispano/javaleague/client/application/ApplicationPresenter.class
 org/javahispano/javaleague/client/application/general/HomePresenter.class
 org/javahispano/javaleague/client/application/login/LoginPresenter$MyProxy.class

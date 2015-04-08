@@ -11,6 +11,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.groups.Default;
 
+import org.gwtbootstrap3.client.ui.ImageAnchor;
 import org.gwtbootstrap3.client.ui.PanelBody;
 
 import com.google.gwt.core.client.GWT;
@@ -48,6 +49,18 @@ public class LoginView extends ViewImpl implements
 	@Ignore
 	@UiField
 	protected DivElement result;
+	
+	@Ignore
+	@UiField
+	protected ImageAnchor loginGoogle;
+
+	@Ignore
+	@UiField
+	protected ImageAnchor loginFacebook;
+
+	@Ignore
+	@UiField
+	protected ImageAnchor loginTwitter;
 
 	@Inject
 	LoginView(final Binder uiBinder, CredentialsEditor editor) {
@@ -67,7 +80,61 @@ public class LoginView extends ViewImpl implements
 		DRIVER.edit(new Credentials());
 		result.removeAllChildren();
 	}
+	
+	@UiHandler("loginGoogle")
+	public void onLoginGoogleClick(ClickEvent event) {
+		Credentials creds = DRIVER.flush();
 
+		Validator validator = Validation.buildDefaultValidatorFactory()
+				.getValidator();
+		Set<ConstraintViolation<Credentials>> violations = validator.validate(
+				creds, Default.class);
+		if (violations.size() > 0) {
+			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
+					violations));
+		}
+
+		if (!DRIVER.hasErrors()) {
+			result.setInnerText(creds.toString());
+		}		
+	}
+
+	@UiHandler("loginFacebook")
+	public void onLoginFacebookClick(ClickEvent event) {
+		Credentials creds = DRIVER.flush();
+
+		Validator validator = Validation.buildDefaultValidatorFactory()
+				.getValidator();
+		Set<ConstraintViolation<Credentials>> violations = validator.validate(
+				creds, Default.class);
+		if (violations.size() > 0) {
+			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
+					violations));
+		}
+
+		if (!DRIVER.hasErrors()) {
+			result.setInnerText(creds.toString());
+		}		
+	}
+	
+	@UiHandler("loginTwitter")
+	public void onLoginTwitterClick(ClickEvent event) {
+		Credentials creds = DRIVER.flush();
+
+		Validator validator = Validation.buildDefaultValidatorFactory()
+				.getValidator();
+		Set<ConstraintViolation<Credentials>> violations = validator.validate(
+				creds, Default.class);
+		if (violations.size() > 0) {
+			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
+					violations));
+		}
+
+		if (!DRIVER.hasErrors()) {
+			result.setInnerText(creds.toString());
+		}
+	}
+	
 	@UiHandler("loginButton")
 	public void onLoginClick(ClickEvent event) {
 		Credentials creds = DRIVER.flush();
