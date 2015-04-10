@@ -153,4 +153,9 @@ public class LoginView extends ViewImpl implements
 		}
 	}
 
+	@Override
+	public ImageAnchor getGoogleLink() {
+		return loginGoogle;
+	}
+
 }
