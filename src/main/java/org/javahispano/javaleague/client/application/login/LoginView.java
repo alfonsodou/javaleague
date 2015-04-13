@@ -81,7 +81,7 @@ public class LoginView extends ViewImpl implements
 		result.removeAllChildren();
 	}
 	
-	@UiHandler("loginGoogle")
+	/*@UiHandler("loginGoogle")
 	public void onLoginGoogleClick(ClickEvent event) {
 		Credentials creds = DRIVER.flush();
 
@@ -97,7 +97,7 @@ public class LoginView extends ViewImpl implements
 		if (!DRIVER.hasErrors()) {
 			result.setInnerText(creds.toString());
 		}		
-	}
+	}*/
 
 	@UiHandler("loginFacebook")
 	public void onLoginFacebookClick(ClickEvent event) {

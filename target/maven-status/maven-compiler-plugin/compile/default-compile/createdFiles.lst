@@ -2,6 +2,7 @@ org/javahispano/javaleague/client/application/login/LoginPresenter$MyView.class
 org/javahispano/javaleague/client/JavaleagueEntryPoint.class
 org/javahispano/javaleague/client/util/ClientUtils.class
 org/javahispano/javaleague/client/OAuth/OurProtectedUrls.class
+org/javahispano/javaleague/client/application/login/LoginPresenter$1.class
 org/javahispano/javaleague/client/JavaleagueClientBundle.class
 org/javahispano/javaleague/client/application/general/HomePresenter$MyProxy.class
 org/javahispano/javaleague/client/application/login/Credentials.class
