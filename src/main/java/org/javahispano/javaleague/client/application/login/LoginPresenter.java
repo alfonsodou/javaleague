@@ -5,6 +5,7 @@ package org.javahispano.javaleague.client.application.login;
 
 import org.gwtbootstrap3.client.ui.ImageAnchor;
 import org.javahispano.javaleague.client.application.ApplicationPresenter;
+import org.javahispano.javaleague.client.gin.ClientGinjector;
 import org.javahispano.javaleague.client.place.NameTokens;
 
 import com.google.gwt.core.shared.GWT;
@@ -17,7 +18,6 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
-import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
@@ -27,6 +27,8 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
  */
 public class LoginPresenter extends
 		Presenter<LoginPresenter.MyView, LoginPresenter.MyProxy> {
+	
+	public final ClientGinjector ginjector = GWT.create(ClientGinjector.class);
 
 	@NameToken(NameTokens.LOGIN)
 	@ProxyCodeSplit
@@ -46,8 +48,7 @@ public class LoginPresenter extends
 			@Override
 			public void onClick(ClickEvent event) {
 				PlaceRequest.Builder myRequestBuilder = new PlaceRequest.Builder().nameToken(NameTokens.HOME);
-				PlaceManager placeManager = GWT.create(PlaceManager.class);
-				placeManager.revealPlace( myRequestBuilder.build() );
+				ginjector.getPlaceManager().revealPlace(myRequestBuilder.build());
 			}
 		});
 	}

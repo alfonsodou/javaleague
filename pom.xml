@@ -80,8 +80,7 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>${validation.version}</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -154,7 +153,7 @@
 			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
-				<version>1.9.18</version>
+				<version>1.9.19</version>
 			</plugin>
 
 			<!-- GWT Maven Plugin -->
