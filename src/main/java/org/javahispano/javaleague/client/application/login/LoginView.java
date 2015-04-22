@@ -23,13 +23,13 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 /**
  * @author adou
  *
  */
-public class LoginView extends ViewImpl implements
+public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 		LoginPresenter.MyView {
 
 	interface Binder extends UiBinder<Widget, LoginView> {
@@ -81,23 +81,10 @@ public class LoginView extends ViewImpl implements
 		result.removeAllChildren();
 	}
 	
-	/*@UiHandler("loginGoogle")
+	@UiHandler("loginGoogle")
 	public void onLoginGoogleClick(ClickEvent event) {
-		Credentials creds = DRIVER.flush();
-
-		Validator validator = Validation.buildDefaultValidatorFactory()
-				.getValidator();
-		Set<ConstraintViolation<Credentials>> violations = validator.validate(
-				creds, Default.class);
-		if (violations.size() > 0) {
-			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
-					violations));
-		}
-
-		if (!DRIVER.hasErrors()) {
-			result.setInnerText(creds.toString());
-		}		
-	}*/
+		getUiHandlers().loginGoogle();
+	}
 
 	@UiHandler("loginFacebook")
 	public void onLoginFacebookClick(ClickEvent event) {

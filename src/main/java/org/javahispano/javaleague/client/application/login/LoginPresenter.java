@@ -8,10 +8,9 @@ import org.javahispano.javaleague.client.application.ApplicationPresenter;
 import org.javahispano.javaleague.client.place.NameTokens;
 
 import com.google.gwt.editor.client.Editor;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -25,16 +24,18 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
  *
  */
 public class LoginPresenter extends
-		Presenter<LoginPresenter.MyView, LoginPresenter.MyProxy> {
+		Presenter<LoginPresenter.MyView, LoginPresenter.MyProxy> implements
+		LoginUiHandlers {
 
 	private final PlaceManager placeManager;
-	
+
 	@NameToken(NameTokens.LOGIN)
 	@ProxyCodeSplit
 	public interface MyProxy extends ProxyPlace<LoginPresenter> {
 	}
 
-	public interface MyView extends View, Editor<Credentials> {
+	public interface MyView extends View, Editor<Credentials>,
+			HasUiHandlers<LoginUiHandlers> {
 		ImageAnchor getGoogleLink();
 	}
 
@@ -42,17 +43,17 @@ public class LoginPresenter extends
 	public LoginPresenter(final EventBus eventBus, final MyView view,
 			final MyProxy proxy, final PlaceManager placeManager) {
 		super(eventBus, view, proxy, ApplicationPresenter.TYPE_SetMainContent);
-		
-		this.placeManager = placeManager;
 
-		view.getGoogleLink().addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				PlaceRequest.Builder myRequestBuilder = new PlaceRequest.Builder()
-						.nameToken(NameTokens.HOME);
-				
-				placeManager.revealPlace(myRequestBuilder.build());
-			}
-		});
+		this.placeManager = placeManager;
+		
+		view.setUiHandlers(this);
+	}
+
+	@Override
+	public void loginGoogle() {
+		PlaceRequest.Builder myRequestBuilder = new PlaceRequest.Builder()
+				.nameToken(NameTokens.HOME);
+
+		placeManager.revealPlace(myRequestBuilder.build());
 	}
 }
