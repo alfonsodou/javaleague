@@ -11,6 +11,7 @@ import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 
 /**
  * @author adou
@@ -20,9 +21,9 @@ public class JavaleagueModule extends AbstractPresenterModule {
 
 	@Override
 	protected void configure() {
-		install(new DefaultModule());
+		install(new DefaultModule(DefaultPlaceManager.class));
 		install(new ApplicationModule());
-
+				
 		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.HOME);
 		bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.HOME);
 		bindConstant().annotatedWith(UnauthorizedPlace.class).to(
