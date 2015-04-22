@@ -3,7 +3,6 @@
  */
 package org.javahispano.javaleague.client.application.login;
 
-import org.gwtbootstrap3.client.ui.ImageAnchor;
 import org.javahispano.javaleague.client.application.ApplicationPresenter;
 import org.javahispano.javaleague.client.place.NameTokens;
 
@@ -36,7 +35,6 @@ public class LoginPresenter extends
 
 	public interface MyView extends View, Editor<Credentials>,
 			HasUiHandlers<LoginUiHandlers> {
-		ImageAnchor getGoogleLink();
 	}
 
 	@Inject

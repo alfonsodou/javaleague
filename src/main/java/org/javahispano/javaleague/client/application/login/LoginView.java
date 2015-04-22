@@ -140,9 +140,4 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 		}
 	}
 
-	@Override
-	public ImageAnchor getGoogleLink() {
-		return loginGoogle;
-	}
-
 }
