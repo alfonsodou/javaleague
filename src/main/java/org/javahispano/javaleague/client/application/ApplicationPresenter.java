@@ -20,6 +20,9 @@ package org.javahispano.javaleague.client.application;
  * #L%
  */
 
+import org.javahispano.javaleague.client.place.NameTokens;
+import org.javahispano.javaleague.client.util.ClientUtils;
+
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
@@ -39,39 +42,44 @@ import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 /**
  * @author Joshua Godi
  */
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
+public class ApplicationPresenter extends
+		Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy> {
 
-    @ProxyStandard
-    public interface MyProxy extends Proxy<ApplicationPresenter> {
-    }
+	@ProxyStandard
+	public interface MyProxy extends Proxy<ApplicationPresenter> {
+	}
 
-    public interface MyView extends View {
-    	public void changeMenu(String text, String token);
-    }
+	public interface MyView extends View {
+		public void changeMenu(String text, String token);
+	}
 
-    /**
-     * Use this in leaf presenters, inside their {@link #revealInParent} method.
-     */
-    @ContentSlot
-    public static final GwtEvent.Type<RevealContentHandler<?>> TYPE_SetMainContent = new GwtEvent.Type<RevealContentHandler<?>>();
+	/**
+	 * Use this in leaf presenters, inside their {@link #revealInParent} method.
+	 */
+	@ContentSlot
+	public static final GwtEvent.Type<RevealContentHandler<?>> TYPE_SetMainContent = new GwtEvent.Type<RevealContentHandler<?>>();
 
-    @Inject
-    ApplicationPresenter(final EventBus eventBus,
-                         final MyView view,
-                         final MyProxy proxy) {
-        super(eventBus, view, proxy, RevealType.Root);
-        
-        // Making the window scroll to top on every page change
-        History.addValueChangeHandler(new ValueChangeHandler<String>() {
-            @Override
-            public void onValueChange(ValueChangeEvent<String> event) {
-                Scheduler.get().scheduleDeferred(new Command() {
-                    @Override
-                    public void execute() {
-                        Window.scrollTo(0, 0);
-                    }
-                });
-            }
-        });
-    }
+	@Inject
+	ApplicationPresenter(final EventBus eventBus, final MyView view,
+			final MyProxy proxy) {
+		super(eventBus, view, proxy, RevealType.Root);
+
+		// if there is a client side session show, Logout link
+		if (ClientUtils.alreadyLoggedIn()) {
+			view.changeMenu("logout", NameTokens.getLogin());
+		}
+
+		// Making the window scroll to top on every page change
+		History.addValueChangeHandler(new ValueChangeHandler<String>() {
+			@Override
+			public void onValueChange(ValueChangeEvent<String> event) {
+				Scheduler.get().scheduleDeferred(new Command() {
+					@Override
+					public void execute() {
+						Window.scrollTo(0, 0);
+					}
+				});
+			}
+		});
+	}
 }
