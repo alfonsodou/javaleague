@@ -21,7 +21,7 @@ public class JavaleagueModule extends AbstractPresenterModule {
 
 	@Override
 	protected void configure() {
-		install(new DefaultModule(DefaultPlaceManager.class));
+		install(new DefaultModule());
 		install(new ApplicationModule());
 				
 		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.HOME);

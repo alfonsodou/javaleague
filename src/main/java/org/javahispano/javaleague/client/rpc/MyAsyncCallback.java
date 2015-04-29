@@ -1,10 +1,9 @@
 package org.javahispano.javaleague.client.rpc;
 
 
-import com.allen_sauer.gwt.log.client.Log;
-import com.example.GWTOAuthLoginDemo.client.ui.BusyPanel;
-import com.example.GWTOAuthLoginDemo.client.util.ClientUtils;
-import com.google.gwt.user.client.Window;
+import org.javahispano.javaleague.client.ui.BusyPanel;
+import org.javahispano.javaleague.client.util.ClientUtils;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**

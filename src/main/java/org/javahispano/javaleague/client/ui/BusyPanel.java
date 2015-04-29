@@ -1,13 +1,14 @@
 package org.javahispano.javaleague.client.ui;
 
-import com.example.GWTOAuthLoginDemo.client.resources.MyResources;
-import com.example.GWTOAuthLoginDemo.client.resources.images.MyImages;
-import com.example.GWTOAuthLoginDemo.client.util.ClientUtils;
+import org.javahispano.javaleague.client.resources.MyResources;
+import org.javahispano.javaleague.client.resources.images.MyImages;
+import org.javahispano.javaleague.client.util.ClientUtils;
+
 import com.google.gwt.safehtml.shared.SafeUri;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Grid;
-import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.PopupPanel;
 
 /**
  * Adapted from:

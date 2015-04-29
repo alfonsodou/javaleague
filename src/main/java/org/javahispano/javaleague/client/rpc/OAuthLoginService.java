@@ -13,9 +13,10 @@
  * limitations under the License.
  *******************************************************************************/
 package org.javahispano.javaleague.client.rpc;
-import com.example.GWTOAuthLoginDemo.client.exception.OurException;
-import com.example.GWTOAuthLoginDemo.client.model.Credential;
-import com.example.GWTOAuthLoginDemo.client.model.SocialUser;
+import org.javahispano.javaleague.client.exception.OurException;
+import org.javahispano.javaleague.client.model.Credential;
+import org.javahispano.javaleague.client.model.SocialUser;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
