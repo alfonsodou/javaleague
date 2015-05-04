@@ -27,10 +27,6 @@
 					</b:PanelHeader>
 					<b:PanelBody ui:field="body" />
 					<b:PanelFooter addStyleNames="{style.footer}">
-						<b:ImageAnchor type="THUMBNAIL" url="images/32px/google.png" ui:field="loginGoogle" />
-						<b:ImageAnchor type="THUMBNAIL" url="images/32px/facebook.png" ui:field="loginFacebook" />
-						<b:ImageAnchor type="THUMBNAIL" url="images/32px/twitter.png" ui:field="loginTwitter" />
-
 						<b:Button type="PRIMARY" ui:field="loginButton">Login</b:Button>
 						<b:Button type="DANGER" ui:field="resetButton">Reset</b:Button>
 					</b:PanelFooter>

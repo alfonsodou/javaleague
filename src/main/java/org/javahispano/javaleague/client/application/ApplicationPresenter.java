@@ -20,9 +20,6 @@ package org.javahispano.javaleague.client.application;
  * #L%
  */
 
-import org.javahispano.javaleague.client.place.NameTokens;
-import org.javahispano.javaleague.client.util.ClientUtils;
-
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
@@ -65,9 +62,9 @@ public class ApplicationPresenter extends
 		super(eventBus, view, proxy, RevealType.Root);
 
 		// if there is a client side session show, Logout link
-		if (ClientUtils.alreadyLoggedIn()) {
+/*		if (ClientUtils.alreadyLoggedIn()) {
 			view.changeMenu("logout", NameTokens.getLogin());
-		}
+		}*/
 
 		// Making the window scroll to top on every page change
 		History.addValueChangeHandler(new ValueChangeHandler<String>() {

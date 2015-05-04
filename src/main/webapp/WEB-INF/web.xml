@@ -5,24 +5,14 @@
 
 <web-app>
 
-<!-- Services -->
-	<!-- ===================== OAuthLoginService ===================== -->
-	<servlet>
-		<servlet-name>OAuthLoginService</servlet-name>
-		<servlet-class>org.javahispano.javaleague.server.rpc.OAuthLoginServiceImpl</servlet-class>
-	</servlet>
+	<!-- Services -->
 
-	<servlet-mapping>
-		<servlet-name>OAuthLoginService</servlet-name>
-		<url-pattern>/javaleague/OAuthLoginService</url-pattern>
-	</servlet-mapping>
+	<!-- Servlets -->
 
-  <!-- Servlets -->
-  
 
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>Javaleague.html</welcome-file>
-  </welcome-file-list>
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>Javaleague.html</welcome-file>
+	</welcome-file-list>
 
 </web-app>

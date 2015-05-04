@@ -49,18 +49,6 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 	@Ignore
 	@UiField
 	protected DivElement result;
-	
-	@Ignore
-	@UiField
-	protected ImageAnchor loginGoogle;
-
-	@Ignore
-	@UiField
-	protected ImageAnchor loginFacebook;
-
-	@Ignore
-	@UiField
-	protected ImageAnchor loginTwitter;
 
 	@Inject
 	LoginView(final Binder uiBinder, CredentialsEditor editor) {
@@ -80,48 +68,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 		DRIVER.edit(new Credentials());
 		result.removeAllChildren();
 	}
-	
-	@UiHandler("loginGoogle")
-	public void onLoginGoogleClick(ClickEvent event) {
-		getUiHandlers().loginGoogle();
-	}
-
-	@UiHandler("loginFacebook")
-	public void onLoginFacebookClick(ClickEvent event) {
-		Credentials creds = DRIVER.flush();
-
-		Validator validator = Validation.buildDefaultValidatorFactory()
-				.getValidator();
-		Set<ConstraintViolation<Credentials>> violations = validator.validate(
-				creds, Default.class);
-		if (violations.size() > 0) {
-			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
-					violations));
-		}
-
-		if (!DRIVER.hasErrors()) {
-			result.setInnerText(creds.toString());
-		}		
-	}
-	
-	@UiHandler("loginTwitter")
-	public void onLoginTwitterClick(ClickEvent event) {
-		Credentials creds = DRIVER.flush();
-
-		Validator validator = Validation.buildDefaultValidatorFactory()
-				.getValidator();
-		Set<ConstraintViolation<Credentials>> violations = validator.validate(
-				creds, Default.class);
-		if (violations.size() > 0) {
-			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
-					violations));
-		}
-
-		if (!DRIVER.hasErrors()) {
-			result.setInnerText(creds.toString());
-		}
-	}
-	
+		
 	@UiHandler("loginButton")
 	public void onLoginClick(ClickEvent event) {
 		Credentials creds = DRIVER.flush();
