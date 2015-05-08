@@ -84,6 +84,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 
 		if (!DRIVER.hasErrors()) {
 			result.setInnerText(creds.toString());
+			getUiHandlers().doLogin();
 		}
 	}
 

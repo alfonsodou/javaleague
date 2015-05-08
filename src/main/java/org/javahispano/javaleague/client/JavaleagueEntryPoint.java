@@ -5,6 +5,7 @@ package org.javahispano.javaleague.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.ScriptInjector;
+import com.googlecode.objectify.ObjectifyFilter;
 
 /**
  * @author adou

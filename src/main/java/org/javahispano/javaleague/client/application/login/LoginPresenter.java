@@ -46,5 +46,9 @@ public class LoginPresenter extends
 		view.setUiHandlers(this);
 	}
 
+	@Override
+	public void doLogin() {
 
+		
+	}
 }

@@ -26,6 +26,7 @@
 		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
 		<slf4j.version>1.7.9</slf4j.version>
 		<gwt.version>2.7.0</gwt.version>
+		<objectify.version>5.1.5</objectify.version>
 	</properties>
 
 	<dependencyManagement>
@@ -80,7 +81,7 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -109,6 +110,12 @@
 			<artifactId>gwtbootstrap3</artifactId>
 			<version>${gwtboostrap3.version}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+			<version>${objectify.version}</version>
 		</dependency>
 
 		<dependency>
@@ -153,7 +160,7 @@
 			<plugin>
 				<groupId>com.google.appengine</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
-				<version>1.9.19</version>
+				<version>1.9.20</version>
 			</plugin>
 
 			<!-- GWT Maven Plugin -->
