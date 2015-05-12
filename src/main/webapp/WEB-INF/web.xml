@@ -6,16 +6,44 @@
 <web-app>
 
 	<!-- Services -->
+	<!-- ===================== AppUserService ===================== -->
+	<servlet>
+		<servlet-name>appUserService</servlet-name>
+		<servlet-class>org.javahispano.javaleague.server.service.AppUserServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appUserService</servlet-name>
+		<url-pattern>/javaleague/appUserService</url-pattern>
+	</servlet-mapping>
 
 	<!-- Servlets -->
 
+	<!-- Listeners -->
+	<!-- ===================== ListenerGuice ===================== -->
+	<listener>
+		<listener-class>org.javahispano.javaleague.server.guice.GuiceServletConfig</listener-class>
+	</listener>
+
+
 	<!-- Filters -->
+	<!-- ===================== ObjectifyFilter ===================== -->
 	<filter>
 		<filter-name>ObjectifyFilter</filter-name>
 		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- ===================== GuiceFilter ===================== -->
+	<filter>
+		<filter-name>guiceFilter</filter-name>
+		<filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>guiceFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 

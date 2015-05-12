@@ -11,5 +11,5 @@ import com.gwtplatform.mvp.client.UiHandlers;
  *
  */
 public interface LoginUiHandlers extends UiHandlers {
-	void doLogin();
+	void doLogin(String password, String email);
 }

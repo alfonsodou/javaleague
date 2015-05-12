@@ -20,13 +20,12 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.javahispano.javaleague.client.service.AppUserService;
 import org.javahispano.javaleague.server.domain.AppUserDao;
-import org.javahispano.javaleague.server.utils.LoginHelper;
-import org.javahispano.javaleague.server.utils.ServletUtils;
-import org.javahispano.javaleague.server.utils.SessionIdentifierGenerator;
-import org.javahispano.javaleague.server.utils.Utils;
-import org.javahispano.javaleague.server.utils.VelocityHelper;
+import org.javahispano.javaleague.server.util.LoginHelper;
+import org.javahispano.javaleague.server.util.ServletUtils;
+import org.javahispano.javaleague.server.util.SessionIdentifierGenerator;
+import org.javahispano.javaleague.server.util.Utils;
+import org.javahispano.javaleague.server.util.VelocityHelper;
 import org.javahispano.javaleague.shared.domain.AppUser;
-import org.javahispano.javaleague.shared.exception.NotLoggedInException;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -126,9 +125,8 @@ public class AppUserServiceImpl extends RemoteServiceServlet implements
 	}
 
 	@Override
-	public void logout() throws NotLoggedInException {
+	public void logout() {
 		getThreadLocalRequest().getSession().invalidate();
-		throw new NotLoggedInException("Logged out");
 	}
 
 	@Override

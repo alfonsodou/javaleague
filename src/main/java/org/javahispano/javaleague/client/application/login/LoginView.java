@@ -68,7 +68,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 		DRIVER.edit(new Credentials());
 		result.removeAllChildren();
 	}
-		
+
 	@UiHandler("loginButton")
 	public void onLoginClick(ClickEvent event) {
 		Credentials creds = DRIVER.flush();
@@ -84,7 +84,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers> implements
 
 		if (!DRIVER.hasErrors()) {
 			result.setInnerText(creds.toString());
-			getUiHandlers().doLogin();
+			getUiHandlers().doLogin(creds.getUsername(), creds.getPassword());
 		}
 	}
 
