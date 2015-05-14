@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE web-app
-    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-    "http://java.sun.com/dtd/web-app_2_3.dtd">
 
-<web-app>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
 	<!-- Services -->
-	<!-- ===================== AppUserService ===================== -->
-	<servlet>
-		<servlet-name>appUserService</servlet-name>
-		<servlet-class>org.javahispano.javaleague.server.service.AppUserServiceImpl</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>appUserService</servlet-name>
-		<url-pattern>/javaleague/appUserService</url-pattern>
-	</servlet-mapping>
 
 	<!-- Servlets -->
 
@@ -36,7 +25,7 @@
 		<filter-name>ObjectifyFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
+
 	<!-- ===================== GuiceFilter ===================== -->
 	<filter>
 		<filter-name>guiceFilter</filter-name>

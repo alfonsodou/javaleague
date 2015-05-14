@@ -5,15 +5,9 @@ package org.javahispano.javaleague.client.application.login;
 
 import org.javahispano.javaleague.client.application.ApplicationPresenter;
 import org.javahispano.javaleague.client.place.NameTokens;
-import org.javahispano.javaleague.client.service.AppUserService;
-import org.javahispano.javaleague.client.service.AppUserServiceAsync;
-import org.javahispano.javaleague.client.service.RPCCall;
 import org.javahispano.javaleague.shared.domain.AppUser;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.Editor;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
@@ -31,9 +25,6 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 public class LoginPresenter extends
 		Presenter<LoginPresenter.MyView, LoginPresenter.MyProxy> implements
 		LoginUiHandlers {
-
-	private AppUserServiceAsync appUserService = GWT
-			.create(AppUserService.class);
 	
 	private final PlaceManager placeManager;
 
@@ -61,31 +52,6 @@ public class LoginPresenter extends
 		final AppUser appUser = new AppUser();
 		appUser.setEmail(email);
 		appUser.setPassword(password);
-		appUser.setAppUserName("Prueba");
-		new RPCCall<AppUser>() {
-			@Override
-			protected void callService(AsyncCallback<AppUser> cb) {
-				appUserService.newUser(appUser, "Prueba", callback);
-			}
-						
-			@Override
-			public void onFailure(Throwable caught) {
-				GWT.log(caught.getMessage());
-				Window.alert("Error user login ...");
-			}
-
-			@Override
-			public void onSuccess(AppUser result) {
-				if (result != null) {
-					clientFactory.setAppUser(result);
-					formLoginUser.reset();
-
-					goTo(new MyTacticPlace());
-				} else {
-					errorLogin.setVisible(true);
-				}
-				loginButton.setEnabled(true);
-			}
-		}.retry(3);		
+		appUser.setAppUserName("Prueba");	
 	}
 }

@@ -27,6 +27,8 @@
 		<slf4j.version>1.7.9</slf4j.version>
 		<gwt.version>2.7.0</gwt.version>
 		<objectify.version>5.1.5</objectify.version>
+		<guice.version>4.0</guice.version>
+		<gae.version>1.9.20</gae.version>		
 	</properties>
 
 	<dependencyManagement>
@@ -69,14 +71,50 @@
 			<artifactId>gin</artifactId>
 			<version>${gin.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>${guice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+			<version>${guice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-assistedinject</artifactId>
+			<version>${guice.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-mvp-client</artifactId>
 			<version>${gwtp.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rpc-client</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rpc-server-guice</artifactId>
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rpc-shared</artifactId>
+			<version>${gwtp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-processors</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- JSR-303 Bean Validation -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -148,6 +186,30 @@
 			<artifactId>gwt-log</artifactId>
 			<version>3.3.2</version>
 		</dependency>
+		
+		<!-- Google App Engine dependencies -->
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${gae.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-labs</artifactId>
+			<version>${gae.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-stubs</artifactId>
+			<version>${gae.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-testing</artifactId>
+			<version>${gae.version}</version>
+			<scope>test</scope>
+		</dependency>		
 
 	</dependencies>
 

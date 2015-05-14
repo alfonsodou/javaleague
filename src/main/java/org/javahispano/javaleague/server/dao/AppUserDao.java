@@ -1,9 +1,9 @@
 /**
  * 
  */
-package org.javahispano.javaleague.server.domain;
+package org.javahispano.javaleague.server.dao;
 
-import static org.javahispano.javaleague.server.domain.OfyService.ofy;
+import static org.javahispano.javaleague.server.dao.objectify.OfyService.ofy;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.javahispano.javaleague.server.domain.AppUserDao;
+import org.javahispano.javaleague.server.dao.AppUserDao;
 import org.javahispano.javaleague.shared.domain.AppUser;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
