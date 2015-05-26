@@ -1,2 +1,0 @@
-# javaleague
-Web javaleague

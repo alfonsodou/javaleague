@@ -1,22 +1,19 @@
 package org.javahispano.javaleague.client.place;
 
-
-
 public class NameTokens {
-    // General Pages
-    public static final String HOME = "home";
-    
+    public static final String HOME = "/home";
+
     // Login Page
-    public static final String LOGIN = "login";
+    public static final String LOGIN = "/login";
     
     // Tournament Page
-    public static final String TOURNAMENT = "tournament";
+    public static final String TOURNAMENT = "/tournament";
     
     // Downloads Page
-    public static final String DOWNLOADS = "downloads";
+    public static final String DOWNLOADS = "/downloads";
     
     // Rules Page
-    public static final String RULES = "rules";
+    public static final String RULES = "/rules";
     
     // Getters for UiBinders
 
@@ -40,5 +37,4 @@ public class NameTokens {
 		return RULES;
 	}
 
-    
 }
