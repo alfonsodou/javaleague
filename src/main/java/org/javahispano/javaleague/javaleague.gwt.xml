@@ -20,6 +20,13 @@
 	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
 	
 	<inherits name="org.javahispano.javaleague.client.Resources"/>
+	
+	<!-- For JSR-303 Bean Validation -->
+	<inherits name="org.hibernate.validator.HibernateValidator" />
+	<replace-with
+		class="org.javahispano.javaleague.client.validation.FormsValidationFactory">
+		<when-type-is class="javax.validation.ValidatorFactory" />
+	</replace-with>	
 
 	<source path='client' />
 	<source path='shared' />
