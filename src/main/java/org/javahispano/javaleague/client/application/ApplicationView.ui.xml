@@ -26,11 +26,17 @@
 					</b:NavbarHeader>
 					<b:NavbarCollapse b:id="navbar-collapse">
 						<b:NavbarNav>
-							<b:AnchorListItem text="Ingreso / Registro" ui:field="login" targetHistoryToken="{nameTokens.getLogin}" />
-							<b:AnchorListItem text="Torneo" ui:field="tournament" targetHistoryToken="{nameTokens.getTournament}" />
-							<b:AnchorListItem text="Descargas" ui:field="downloads" targetHistoryToken="{nameTokens.getDownloads}" />
-							<b:AnchorListItem text="Reglas" ui:field="rules" targetHistoryToken="{nameTokens.getRules}" />
-							<b:AnchorListItem text="Foro" ui:field="forum" href="http://www.javahispano.org/foro-de-la-javacup/" />
+							<b:AnchorListItem text="Ingreso / Registro"
+								ui:field="login" href="{nameTokens.getLogin}"
+								targetHistoryToken="#{nameTokens.getLogin}" />
+							<b:AnchorListItem text="Torneo" ui:field="tournament"
+								targetHistoryToken="#{nameTokens.getTournament}" />
+							<b:AnchorListItem text="Descargas" ui:field="downloads"
+								targetHistoryToken="#{nameTokens.getDownloads}" />
+							<b:AnchorListItem text="Reglas" ui:field="rules"
+								targetHistoryToken="#{nameTokens.getRules}" />
+							<b:AnchorListItem text="Foro" ui:field="forum"
+								href="http://www.javahispano.org/foro-de-la-javacup/" />
 						</b:NavbarNav>
 					</b:NavbarCollapse>
 				</b:Container>
@@ -38,7 +44,7 @@
 
 			<!-- Container Content -->
 			<g:SimplePanel ui:field="contentContainer" />
-			
+
 			<!-- Container Foot -->
 			<g:SimplePanel ui:field="footContainer" />
 

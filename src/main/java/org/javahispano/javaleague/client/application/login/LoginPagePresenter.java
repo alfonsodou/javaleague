@@ -21,11 +21,12 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 public class LoginPagePresenter extends
 		Presenter<LoginPagePresenter.MyView, LoginPagePresenter.MyProxy> implements
 		LoginUiHandlers {
-    interface MyView extends View {
+    public interface MyView extends View {
     }	
 	
     @ProxyStandard
-    @NameToken(NameTokens.HOME)
+    @NameToken(NameTokens.LOGIN)
+	public
     interface MyProxy extends ProxyPlace<LoginPagePresenter> {
     }
 

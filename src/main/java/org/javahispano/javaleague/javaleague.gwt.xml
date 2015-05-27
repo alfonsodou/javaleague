@@ -18,15 +18,20 @@
 	<inherits name="com.wallissoftware.pushstate.PushState" />
 
 	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
-	
-	<inherits name="org.javahispano.javaleague.client.Resources"/>
-	
+
+	<inherits name="org.javahispano.javaleague.client.Resources" />
+
+	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
+
 	<!-- For JSR-303 Bean Validation -->
 	<inherits name="org.hibernate.validator.HibernateValidator" />
 	<replace-with
 		class="org.javahispano.javaleague.client.validation.FormsValidationFactory">
 		<when-type-is class="javax.validation.ValidatorFactory" />
-	</replace-with>	
+	</replace-with>
+	
+		<!-- Specify the app entry point class. -->
+    <!--  <entry-point class="org.javahispano.javaleague.client.JavaleagueEntryPoint"/> -->
 
 	<source path='client' />
 	<source path='shared' />
