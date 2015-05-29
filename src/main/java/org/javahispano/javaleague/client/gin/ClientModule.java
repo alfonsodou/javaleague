@@ -19,7 +19,7 @@ public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
         //install(new DefaultModule.Builder().tokenFormatter(RouteTokenFormatter.class).build());
-        install(new DefaultModule.Builder().build());
+        install(new DefaultModule());
         install(new ApplicationModule());
 
         // DefaultPlaceManager Places

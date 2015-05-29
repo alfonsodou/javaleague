@@ -29,9 +29,14 @@
 		class="org.javahispano.javaleague.client.validation.FormsValidationFactory">
 		<when-type-is class="javax.validation.ValidatorFactory" />
 	</replace-with>
-	
-		<!-- Specify the app entry point class. -->
-    <!--  <entry-point class="org.javahispano.javaleague.client.JavaleagueEntryPoint"/> -->
+
+	<!-- Specify the app entry point class. -->
+	<!-- <entry-point class="org.javahispano.javaleague.client.JavaleagueEntryPoint"/> -->
+
+	<inherits name='org.gwtbootstrap3.extras.cachemanifest.Offline' />
+	<add-linker name="offline" />
+	<extend-configuration-property name="cachemanifest_static_files"
+		value="/javaleague/javaleague.jsp" />
 
 	<source path='client' />
 	<source path='shared' />

@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.event.shared.GwtEvent.Type;
+import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Window;
@@ -22,7 +22,8 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     }
 
     @ContentSlot
-    public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<>();
+    //public static final Type<RevealContentHandler<?>> SLOT_SetMainContent = new Type<>();
+	public static final GwtEvent.Type<RevealContentHandler<?>> SLOT_SetMainContent = new GwtEvent.Type<RevealContentHandler<?>>();
 
     @ProxyStandard
     interface MyProxy extends Proxy<ApplicationPresenter> {
