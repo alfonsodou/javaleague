@@ -2,14 +2,14 @@ package org.javahispano.javaleague.client.gin;
 
 import org.javahispano.javaleague.client.application.ApplicationModule;
 import org.javahispano.javaleague.client.place.NameTokens;
-import org.javahispano.javaleague.client.place.NavigationTracker;
-
-import com.arcbees.analytics.client.AnalyticsModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
+import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
+import com.arcbees.analytics.client.AnalyticsModule;
+import org.javahispano.javaleague.client.place.NavigationTracker;
 
 /**
  * See more on setting up the PlaceManager on <a
@@ -18,14 +18,13 @@ import com.gwtplatform.mvp.client.gin.DefaultModule;
 public class ClientModule extends AbstractPresenterModule {
     @Override
     protected void configure() {
-        //install(new DefaultModule.Builder().tokenFormatter(RouteTokenFormatter.class).build());
-        install(new DefaultModule());
+        install(new DefaultModule.Builder().tokenFormatter(RouteTokenFormatter.class).build());
         install(new ApplicationModule());
 
         // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.HOME);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.HOME);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.HOME);
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
         
         install(new AnalyticsModule.Builder("UX-XXXX-Y").build());
         bind(NavigationTracker.class).asEagerSingleton();

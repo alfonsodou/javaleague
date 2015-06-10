@@ -14,7 +14,7 @@ class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     }
 
     @UiField
-    SimplePanel contentContainer;
+    SimplePanel main;
 
     @Inject
     ApplicationView(Binder uiBinder) {
@@ -24,7 +24,7 @@ class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.SLOT_SetMainContent) {
-            contentContainer.setWidget(content);
+            main.setWidget(content);
         } else {
             super.setInSlot(slot, content);
         }

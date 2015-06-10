@@ -6,7 +6,7 @@
     <display-name>javaleague</display-name>
 
     <welcome-file-list>
-        <welcome-file>javaleague.jsp</welcome-file>
+        <welcome-file>javaleague.html</welcome-file>
     </welcome-file-list>
 
     <listener>
