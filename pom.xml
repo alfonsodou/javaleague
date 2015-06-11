@@ -16,6 +16,10 @@
 		<gin.version>2.1.2</gin.version>
 		<universal-analytics.version>2.1</universal-analytics.version>
 		<gwt-pushstate.version>2.0.0</gwt-pushstate.version>
+		<gwtbootstrap.version>0.9.1</gwtbootstrap.version>
+		<validation.version>1.0.0.GA</validation.version>
+		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
+		<slf4j.version>1.7.9</slf4j.version>		
 		<!-- server -->
 		<guice.version>3.0</guice.version>
 		<appengine.version>1.9.21</appengine.version>
@@ -264,7 +268,49 @@
 			<version>${gwt-pushstate.version}</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.gwtbootstrap3</groupId>
+			<artifactId>gwtbootstrap3</artifactId>
+			<version>${gwtbootstrap.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.gwtbootstrap3</groupId>
+			<artifactId>gwtbootstrap3-extras</artifactId>
+			<version>${gwtbootstrap.version}</version>
+			<scope>provided</scope>
+		</dependency>		
+		
+				<!-- JSR-303 Bean Validation -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation.version}</version>
+			<classifier>sources</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+			<classifier>sources</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

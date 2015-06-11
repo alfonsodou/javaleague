@@ -22,9 +22,9 @@ public class ClientModule extends AbstractPresenterModule {
         install(new ApplicationModule());
 
         // DefaultPlaceManager Places
-        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.home);
-        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.home);
-        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.home);
+        bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.HOME);
+        bindConstant().annotatedWith(ErrorPlace.class).to(NameTokens.HOME);
+        bindConstant().annotatedWith(UnauthorizedPlace.class).to(NameTokens.HOME);
         
         install(new AnalyticsModule.Builder("UX-XXXX-Y").build());
         bind(NavigationTracker.class).asEagerSingleton();
