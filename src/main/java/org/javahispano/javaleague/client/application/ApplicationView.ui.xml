@@ -29,20 +29,18 @@
 			<b:Navbar position="FIXED_TOP">
 				<b:Container>
 					<b:NavbarHeader>
-						<!-- <b:NavbarBrand targetHistoryToken="{nameTokens.getHome}" ui:field="brand">javaleague 
-							</b:NavbarBrand> -->
-						<g:InlineHyperlink targetHistoryToken="{nameTokens.getHome}"
-							ui:field="brand">javaleague</g:InlineHyperlink>
+						<b:ImageAnchor href="#{nameTokens.getHome}" url="/images/logo_small.png"
+							ui:field="brand"></b:ImageAnchor>
 						<b:NavbarCollapseButton dataTarget="#navbar-collapse" />
 					</b:NavbarHeader>
 					<b:NavbarCollapse b:id="navbar-collapse">
 						<b:NavbarNav>
-							<b:Button ui:field="loginButton" type="LINK">Ingreso / Registro</b:Button>
-							<b:Button ui:field="tournamentButton" type="LINK">Torneo</b:Button>
-							<b:Button ui:field="downloadButton" type="LINK">Descargas</b:Button>
-							<b:Button ui:field="rulesButton" type="LINK">Reglas</b:Button>
-							<b:AnchorButton ui:field="forumButton" type="LINK"
-								href="http://www.javahispano.org/foro-de-la-javacup/">Foro</b:AnchorButton>
+							<b:AnchorListItem href="#{nameTokens.getLogin}">Ingreso / Registro</b:AnchorListItem>
+							<b:AnchorListItem href="#{nameTokens.getTournament}">Torneo</b:AnchorListItem>
+							<b:AnchorListItem href="#{nameTokens.getDownloads}">Descargas</b:AnchorListItem>
+							<b:AnchorListItem href="#{nameTokens.getRules}">Reglas</b:AnchorListItem>
+							<b:AnchorListItem
+								href="http://www.javahispano.org/foro-de-la-javacup/">Foro</b:AnchorListItem>
 						</b:NavbarNav>
 					</b:NavbarCollapse>
 				</b:Container>
@@ -52,7 +50,14 @@
 			<g:SimplePanel ui:field="contentContainer" />
 
 			<!-- Container Foot -->
-			<g:SimplePanel ui:field="footContainer" />
+			<g:SimplePanel ui:field="footContainer">
+				<b:Row>
+					<b:Column size="XS_12">
+						<b:ImageAnchor href="http://www.javahispano.org"
+							url="/images/logoJavaHispano.png"></b:ImageAnchor>
+					</b:Column>
+				</b:Row>
+			</g:SimplePanel>
 
 		</b:Container>
 

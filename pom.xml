@@ -22,7 +22,7 @@
 		<slf4j.version>1.7.9</slf4j.version>		
 		<!-- server -->
 		<guice.version>3.0</guice.version>
-		<appengine.version>1.9.21</appengine.version>
+		<appengine.version>1.9.22</appengine.version>
 		<objectify.version>5.1.4</objectify.version>
 
 		<!-- testing -->
@@ -138,8 +138,8 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<!-- Don't deploy gwt-dev jar to GAE -->
+			<!-- Don't deploy gwt-dev jar to GAE -->
+			<!-- <plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.3</version>
 				<executions>
@@ -162,15 +162,15 @@
 								<fileset>
 									<directory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</directory>
 									<includes>
-										<!-- <include>gwt-user*jar</include> -->
-										<include>gwt-dev*jar</include>
+										<include>gwt-user*jar</include> 
+										<include>gwt-dev*jar</include> 
 									</includes>
 								</fileset>
 							</filesets>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>  -->
 		</plugins>
 	</build>
 
