@@ -13,6 +13,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.dispatch.rpc.shared.DispatchAsync;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -27,7 +28,7 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 public class LoginPagePresenter extends
 		Presenter<LoginPagePresenter.MyView, LoginPagePresenter.MyProxy>
 		implements LoginUiHandlers {
-	public interface MyView extends View {
+	public interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
 	}
 
 	@ProxyCodeSplit
@@ -45,6 +46,8 @@ public class LoginPagePresenter extends
 		
 		this.placeManager = placeManager;
 		this.dispatcher = dispatcher;
+		
+		getView().setUiHandlers(this);
 	}
 
 	@Override
