@@ -3,6 +3,7 @@
  */
 package org.javahispano.javaleague.server.locator;
 
+import static org.javahispano.javaleague.server.domain.OfyService.ofy;
 import org.javahispano.javaleague.server.domain.DatastoreObject;
 
 import com.google.web.bindery.requestfactory.shared.Locator;
@@ -28,8 +29,7 @@ public class ObjectifyLocator extends Locator<DatastoreObject, Long> {
 
 	@Override
 	public DatastoreObject find(Class<? extends DatastoreObject> clazz, Long id) {
-		DAOBase daoBase = new DAOBase();
-		return daoBase.ofy().find(clazz, id);
+		return ofy().load().type(clazz).id(id).now();
 	}
 
 	@Override
