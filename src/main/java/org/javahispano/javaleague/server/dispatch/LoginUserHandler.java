@@ -6,6 +6,8 @@ package org.javahispano.javaleague.server.dispatch;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.service.AppUserDao;
 import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
 import org.javahispano.javaleague.shared.dispatch.LoginUserResult;
 
@@ -23,6 +25,7 @@ public class LoginUserHandler implements
 		ActionHandler<LoginUserAction, LoginUserResult> {
 	private Provider<HttpServletRequest> requestProvider;
 	private ServletContext servletContext;
+	private AppUserDao appUserDao = new AppUserDao();
 
 	@Inject
 	LoginUserHandler(ServletContext servletContext,
@@ -34,8 +37,12 @@ public class LoginUserHandler implements
 	@Override
 	public LoginUserResult execute(LoginUserAction arg0, ExecutionContext arg1)
 			throws ActionException {
-		// TODO Auto-generated method stub
-		return null;
+		AppUser appUser = new AppUser();
+		appUser.setEmail(arg0.getEmail());
+		appUser.setPassword(arg0.getPassword());
+		appUserDao.put(appUser);
+
+		return new LoginUserResult("OK!");
 	}
 
 	@Override

@@ -139,7 +139,7 @@
 			</plugin>
 
 			<!-- Don't deploy gwt-dev jar to GAE -->
-			<!-- <plugin>
+			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>2.3</version>
 				<executions>
@@ -162,7 +162,7 @@
 								<fileset>
 									<directory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</directory>
 									<includes>
-										<include>gwt-user*jar</include> 
+										<!--  <include>gwt-user*jar</include> --> 
 										<include>gwt-dev*jar</include> 
 									</includes>
 								</fileset>
@@ -170,7 +170,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>  -->
+			</plugin>  
 		</plugins>
 	</build>
 

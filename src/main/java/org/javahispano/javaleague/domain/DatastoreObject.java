@@ -1,9 +1,10 @@
 /**
  * 
  */
-package org.javahispano.javaleague.server.domain;
+package org.javahispano.javaleague.domain;
 
 import com.google.appengine.api.datastore.PrePut;
+import com.google.appengine.api.datastore.PutContext;
 import com.googlecode.objectify.annotation.Id;
 
 /**
@@ -19,7 +20,7 @@ public class DatastoreObject {
 	 * Auto-increment version # whenever persisted
 	 */
 	@PrePut
-	void onPersist() {
+	void onPersist(PutContext context) {
 		this.version++;
 	}
 

@@ -51,7 +51,7 @@ public class LoginPagePresenter extends
 	}
 
 	@Override
-	public void doLogin(String password, String email) {
+	public void doLogin(String email, String password) {
 		dispatcher.execute(new LoginUserAction(email, password), new AsyncCallback<LoginUserResult>() {
 
 			@Override

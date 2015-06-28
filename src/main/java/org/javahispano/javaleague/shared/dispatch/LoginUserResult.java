@@ -10,6 +10,7 @@ import com.gwtplatform.dispatch.rpc.shared.Result;
  *
  */
 public class LoginUserResult implements Result {
+	private String response;
 	/**
 	 * 
 	 */
@@ -17,5 +18,13 @@ public class LoginUserResult implements Result {
 
 	private LoginUserResult() {
 		
+	}
+	
+	public LoginUserResult(final String response) {
+		this.response = response;
+	}
+	
+	public String getResponse() {
+		return response;
 	}
 }
