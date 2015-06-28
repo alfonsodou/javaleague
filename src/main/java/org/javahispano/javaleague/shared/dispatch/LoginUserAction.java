@@ -13,6 +13,7 @@ public class LoginUserAction extends UnsecuredActionImpl<LoginUserResult> {
 	private String email;
 	private String password;
 	
+	@SuppressWarnings("unused")
 	private LoginUserAction() {
 		this.email = null;
 		this.password = null;

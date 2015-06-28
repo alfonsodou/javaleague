@@ -16,6 +16,7 @@ public class LoginUserResult implements Result {
 	 */
 	private static final long serialVersionUID = -5721277515413213487L;
 
+	@SuppressWarnings("unused")
 	private LoginUserResult() {
 		
 	}

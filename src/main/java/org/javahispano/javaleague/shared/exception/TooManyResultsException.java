@@ -6,6 +6,11 @@ package org.javahispano.javaleague.shared.exception;
 public class TooManyResultsException extends Exception
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2558745388519221717L;
+
 	public TooManyResultsException()
 	{
 		super();
