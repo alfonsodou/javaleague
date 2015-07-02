@@ -17,6 +17,12 @@ public class AppUser extends DatastoreObject {
 
 	public AppUser(String userEmail) {
 		this.email = userEmail;
+		this.password = "";
+	}
+	
+	public AppUser(String userEmail, String password) {
+		this.email = userEmail;
+		this.password = password;
 	}
 
 	public String getEmail() {

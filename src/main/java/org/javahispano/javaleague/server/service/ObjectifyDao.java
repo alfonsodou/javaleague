@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.javahispano.javaleague.shared.exception.TooManyResultsException;
 
@@ -27,6 +28,8 @@ import com.googlecode.objectify.cmd.Query;
  * @param <T>
  */
 public class ObjectifyDao<T> {
+	
+	private static Logger logger = Logger.getLogger(ObjectifyDao.class.getName());
 
 	static final int BAD_MODIFIERS = Modifier.FINAL | Modifier.STATIC
 			| Modifier.TRANSIENT;

@@ -10,6 +10,7 @@ import org.javahispano.javaleague.domain.AppUser;
 import org.javahispano.javaleague.server.service.AppUserDao;
 import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
 import org.javahispano.javaleague.shared.dispatch.LoginUserResult;
+import org.javahispano.javaleague.shared.exception.TooManyResultsException;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -37,12 +38,18 @@ public class LoginUserHandler implements
 	@Override
 	public LoginUserResult execute(LoginUserAction arg0, ExecutionContext arg1)
 			throws ActionException {
-		AppUser appUser = new AppUser();
-		appUser.setEmail(arg0.getEmail());
-		appUser.setPassword(arg0.getPassword());
-		appUserDao.put(appUser);
+		LoginUserResult loginUserResult = new LoginUserResult("OK!");
+		AppUser appUser = null;
+		try {
+			appUser = appUserDao.getByProperty("email", arg0.getEmail());
+			if (appUser == null) {
+				loginUserResult.setResponse("KO!");
+			}
+		} catch (TooManyResultsException e) {
+			loginUserResult.setResponse("KO!");
+		}
 
-		return new LoginUserResult("OK!");
+		return loginUserResult;
 	}
 
 	@Override

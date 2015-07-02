@@ -3,6 +3,8 @@
  */
 package org.javahispano.javaleague.domain;
 
+import java.util.Date;
+
 import com.google.appengine.api.datastore.PrePut;
 import com.google.appengine.api.datastore.PutContext;
 import com.googlecode.objectify.annotation.Id;
@@ -15,13 +17,12 @@ public class DatastoreObject {
 	@Id
 	private Long id = null;
 	private Integer version = 0;
+	private Date modified;
 
-	/**
-	 * Auto-increment version # whenever persisted
-	 */
 	@PrePut
 	void onPersist(PutContext context) {
 		this.version++;
+		this.modified = new Date();
 	}
 
 	public Long getId() {
@@ -39,4 +40,14 @@ public class DatastoreObject {
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
+
+	public Date getModified() {
+		return modified;
+	}
+
+	public void setModified(Date modified) {
+		this.modified = modified;
+	}
+	
+	
 }
