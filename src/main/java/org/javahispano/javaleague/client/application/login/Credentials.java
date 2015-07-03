@@ -25,13 +25,15 @@ import java.io.Serializable;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+
 public class Credentials implements Serializable {
 
     private static final long serialVersionUID = -1626677647077707091L;
 
     private String password = null;
 
-    private String username = null;
+    private String email = null;
 
     /** {@inheritDoc} */
     @Override
@@ -43,9 +45,9 @@ public class Credentials implements Serializable {
         if (password == null) {
             if (other.password != null) { return false; }
         } else if (!password.equals(other.password)) { return false; }
-        if (username == null) {
-            if (other.username != null) { return false; }
-        } else if (!username.equals(other.username)) { return false; }
+        if (email == null) {
+            if (other.email != null) { return false; }
+        } else if (!email.equals(other.email)) { return false; }
         return true;
     }
 
@@ -59,11 +61,12 @@ public class Credentials implements Serializable {
     }
 
     /**
-     * @return the username
+     * @return the email
      */
-    @NotNull
-    public String getUsername() {
-        return username;
+    @Email
+    @Size(min = 4, max = 128)
+    public String getEmail() {
+        return email;
     }
 
     /** {@inheritDoc} */
@@ -72,7 +75,7 @@ public class Credentials implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + (password == null ? 0 : password.hashCode());
-        result = prime * result + (username == null ? 0 : username.hashCode());
+        result = prime * result + (email == null ? 0 : email.hashCode());
         return result;
     }
 
@@ -84,16 +87,16 @@ public class Credentials implements Serializable {
     }
 
     /**
-     * @param username the username to set
+     * @param email the email to set
      */
-    public void setUsername(final String username) {
-        this.username = username;
+    public void setEmail(final String email) {
+        this.email = email;
     }
 
     /** {@inheritDoc} */
     @Override
     public String toString() {
-        return "Credentials [username=" + username + ", password=" + password + "]";
+        return "Credentials [email=" + email + ", password=" + password + "]";
     }
 
 }

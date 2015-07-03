@@ -45,7 +45,7 @@ public class CredentialsEditor extends Composite implements Editor<Credentials> 
     protected Input password;
 
     @UiField
-    protected TextBox username;
+    protected TextBox email;
 
     /**
      * Instantiates a new credentials editor.

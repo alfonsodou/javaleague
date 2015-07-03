@@ -81,7 +81,7 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers> implement
 
 		if (!DRIVER.hasErrors()) {
 			result.setInnerText(creds.toString());
-			getUiHandlers().doLogin(creds.getUsername(), creds.getPassword());
+			getUiHandlers().doLogin(creds.getEmail(), creds.getPassword());
 		}
 	}
 
