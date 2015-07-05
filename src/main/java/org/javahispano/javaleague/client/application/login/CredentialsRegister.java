@@ -26,7 +26,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Pattern;
 
-public class Credentials implements Serializable {
+public class CredentialsRegister implements Serializable {
 
     private static final long serialVersionUID = -1626677647077707091L;
 
@@ -34,16 +34,26 @@ public class Credentials implements Serializable {
 
     private String email = null;
 
+    private String confirmPassword = null;
+
+    private String username = null;
+
     /** {@inheritDoc} */
     @Override
     public boolean equals(final Object obj) {
         if (this == obj) { return true; }
         if (obj == null) { return false; }
         if (getClass() != obj.getClass()) { return false; }
-        Credentials other = (Credentials) obj;
+        CredentialsRegister other = (CredentialsRegister) obj;
         if (password == null) {
             if (other.password != null) { return false; }
         } else if (!password.equals(other.password)) { return false; }
+        if (confirmPassword == null) {
+            if (other.confirmPassword != null) { return false; }
+        } else if (!confirmPassword.equals(other.confirmPassword)) { return false; }
+        if (username == null) {
+            if (other.username != null) { return false; }
+        } else if (!username.equals(other.username)) { return false; }
         if (email == null) {
             if (other.email != null) { return false; }
         } else if (!email.equals(other.email)) { return false; }
@@ -60,6 +70,24 @@ public class Credentials implements Serializable {
     }
 
     /**
+     * @return the repassword
+     */
+    @NotNull
+    @Size(min = 4, max = 12)
+    public String getRePassword() {
+        return confirmPassword;
+    }
+
+    /**
+     * @return the username
+     */
+    @NotNull
+    @Size(min = 4, max = 128)
+    public String getUserName() {
+        return username;
+    }
+
+    /**
      * @return the email
      */
     @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:[a-zA-Z]{2,6})$", message="Email no válido")
@@ -73,7 +101,9 @@ public class Credentials implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + (username == null ? 0 : username.hashCode());
         result = prime * result + (password == null ? 0 : password.hashCode());
+        result = prime * result + (confirmPassword == null ? 0 : confirmPassword.hashCode());
         result = prime * result + (email == null ? 0 : email.hashCode());
         return result;
     }
@@ -86,6 +116,20 @@ public class Credentials implements Serializable {
     }
 
     /**
+     * @param repassword the password to set
+     */
+    public void setRePassword(final String repassword) {
+        this.confirmPassword = repassword;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(final String username) {
+        this.username = username;
+    }
+
+    /**
      * @param email the email to set
      */
     public void setEmail(final String email) {
@@ -95,7 +139,7 @@ public class Credentials implements Serializable {
     /** {@inheritDoc} */
     @Override
     public String toString() {
-        return "Credentials [email=" + email + ", password=" + password + "]";
+        return "Credentials [username=" + username + ", email=" + email + ", password=" + password + "]";
     }
 
 }
