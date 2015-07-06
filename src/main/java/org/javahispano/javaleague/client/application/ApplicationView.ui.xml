@@ -35,7 +35,8 @@
 					</b:NavbarHeader>
 					<b:NavbarCollapse b:id="navbar-collapse">
 						<b:NavbarNav>
-							<b:AnchorListItem href="#{nameTokens.getLogin}">Ingreso / Registro</b:AnchorListItem>
+							<b:AnchorListItem href="#{nameTokens.getLogin}">Ingreso</b:AnchorListItem>
+							<b:AnchorListItem href="#{nameTokens.getRegister}">Registro</b:AnchorListItem>
 							<b:AnchorListItem href="#{nameTokens.getTournament}">Torneo</b:AnchorListItem>
 							<b:AnchorListItem href="#{nameTokens.getDownloads}">Descargas</b:AnchorListItem>
 							<b:AnchorListItem href="#{nameTokens.getRules}">Reglas</b:AnchorListItem>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.javahispano.javaleague.client.application.login;
+package org.javahispano.javaleague.client.application.register;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -30,18 +30,19 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
  * @author adou
  *
  */
-public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
-		implements LoginPagePresenter.MyView {
+public class RegisterPageView extends ViewWithUiHandlers<RegisterUiHandlers>
+		implements RegisterPagePresenter.MyView {
 
-	interface Binder extends UiBinder<Widget, LoginPageView> {
+	interface Binder extends UiBinder<Widget, RegisterPageView> {
 	}
 
-	interface CredentialDriver extends
-			SimpleBeanEditorDriver<Credentials, CredentialsEditor> {
+	interface CredentialRegisterDriver
+			extends
+			SimpleBeanEditorDriver<CredentialsRegister, CredentialsRegisterEditor> {
 	}
 
-	private static final CredentialDriver DRIVER = GWT
-			.create(CredentialDriver.class);
+	private static final CredentialRegisterDriver DRIVER = GWT
+			.create(CredentialRegisterDriver.class);
 
 	@UiField
 	protected PanelBody body;
@@ -53,7 +54,7 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 	protected DivElement result;
 
 	@Inject
-	LoginPageView(final Binder uiBinder, CredentialsEditor editor) {
+	RegisterPageView(final Binder uiBinder, CredentialsRegisterEditor editor) {
 		initWidget(uiBinder.createAndBindUi(this));
 		body.add(editor);
 		DRIVER.initialize(editor);
@@ -62,22 +63,22 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 	@Override
 	protected void onAttach() {
 		super.onAttach();
-		DRIVER.edit(new Credentials());
+		DRIVER.edit(new CredentialsRegister());
 	}
 
 	@UiHandler("resetButton")
 	public void onResetClick(ClickEvent event) {
-		DRIVER.edit(new Credentials());	
+		DRIVER.edit(new CredentialsRegister());	
 		result.removeAllChildren();
 	}
 
 	@UiHandler("loginButton")
 	public void onLoginClick(ClickEvent event) {
-		Credentials creds = DRIVER.flush();
+		CredentialsRegister creds = DRIVER.flush();
 
 		Validator validator = Validation.buildDefaultValidatorFactory()
 				.getValidator();
-		Set<ConstraintViolation<Credentials>> violations = validator.validate(
+		Set<ConstraintViolation<CredentialsRegister>> violations = validator.validate(
 				creds, Default.class);
 		if (violations.size() > 0) {
 			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(

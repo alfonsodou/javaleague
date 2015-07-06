@@ -6,6 +6,7 @@ package org.javahispano.javaleague.client.validation;
 import javax.validation.Validator;
 
 import org.javahispano.javaleague.client.application.login.Credentials;
+import org.javahispano.javaleague.client.application.register.CredentialsRegister;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.validation.client.AbstractGwtValidatorFactory;
@@ -21,10 +22,11 @@ public class FormsValidationFactory extends AbstractGwtValidatorFactory {
     /**
      * The Interface GwtValidator.
      */
-    @GwtValidation(Credentials.class)
+    @GwtValidation({Credentials.class, CredentialsRegister.class})
     public interface GwtValidator extends Validator {
     }
 
+    
     @Override
     public AbstractGwtValidator createValidator() {
         return GWT.create(GwtValidator.class);

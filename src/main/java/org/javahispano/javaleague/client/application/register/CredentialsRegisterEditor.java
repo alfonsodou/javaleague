@@ -1,4 +1,4 @@
-package org.javahispano.javaleague.client.application.login;
+package org.javahispano.javaleague.client.application.register;
 
 /*
  * #%L
@@ -49,7 +49,10 @@ public class CredentialsRegisterEditor extends Composite implements
 	protected TextBox email;
 
 	@UiField
-	protected Input repassword;
+	protected Input confirmPassword;
+	
+	@UiField
+	protected TextBox confirmEmail;
 
 	@UiField
 	protected TextBox username;
