@@ -68,7 +68,7 @@ public class RegisterPageView extends ViewWithUiHandlers<RegisterUiHandlers>
 
 	@UiHandler("resetButton")
 	public void onResetClick(ClickEvent event) {
-		DRIVER.edit(new CredentialsRegister());	
+		DRIVER.edit(new CredentialsRegister());
 		result.removeAllChildren();
 	}
 
@@ -78,8 +78,8 @@ public class RegisterPageView extends ViewWithUiHandlers<RegisterUiHandlers>
 
 		Validator validator = Validation.buildDefaultValidatorFactory()
 				.getValidator();
-		Set<ConstraintViolation<CredentialsRegister>> violations = validator.validate(
-				creds, Default.class);
+		Set<ConstraintViolation<CredentialsRegister>> violations = validator
+				.validate(creds, Default.class);
 		if (violations.size() > 0) {
 			DRIVER.setConstraintViolations(new ArrayList<ConstraintViolation<?>>(
 					violations));
@@ -87,7 +87,8 @@ public class RegisterPageView extends ViewWithUiHandlers<RegisterUiHandlers>
 
 		if (!DRIVER.hasErrors()) {
 			result.setInnerText(creds.toString());
-			getUiHandlers().doLogin(creds.getEmail(), creds.getPassword());
+			getUiHandlers().doRegister(creds.getEmail(), creds.getPassword(),
+					creds.getUsername());
 		}
 	}
 

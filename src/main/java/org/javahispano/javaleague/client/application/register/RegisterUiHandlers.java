@@ -10,5 +10,5 @@ import com.gwtplatform.mvp.client.UiHandlers;
  *
  */
 public interface RegisterUiHandlers extends UiHandlers {
-	void doLogin(String email, String password);
+	void doRegister(String email, String password, String userName);
 }

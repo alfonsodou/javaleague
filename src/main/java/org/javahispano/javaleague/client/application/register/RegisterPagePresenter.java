@@ -10,8 +10,8 @@ import org.gwtbootstrap3.client.ui.ModalFooter;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.javahispano.javaleague.client.application.ApplicationPresenter;
 import org.javahispano.javaleague.client.place.NameTokens;
-import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
-import org.javahispano.javaleague.shared.dispatch.LoginUserResult;
+import org.javahispano.javaleague.shared.dispatch.RegisterUserAction;
+import org.javahispano.javaleague.shared.dispatch.RegisterUserResult;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -58,9 +58,9 @@ public class RegisterPagePresenter extends
 	}
 
 	@Override
-	public void doLogin(String email, String password) {
-		dispatcher.execute(new LoginUserAction(email, password),
-				new AsyncCallback<LoginUserResult>() {
+	public void doRegister(String email, String password, String userName) {
+		dispatcher.execute(new RegisterUserAction(email, password, userName),
+				new AsyncCallback<RegisterUserResult>() {
 
 					@Override
 					public void onFailure(Throwable caught) {
@@ -69,16 +69,16 @@ public class RegisterPagePresenter extends
 					}
 
 					@Override
-					public void onSuccess(LoginUserResult result) {
+					public void onSuccess(RegisterUserResult result) {
 						
 						if (result.getResponse().equals("KO!")) {
 							final Modal modal = new Modal();
-							modal.setTitle("Login");
+							modal.setTitle("Registro");
 							modal.setClosable(true);
 
 							final ModalBody modalBody = new ModalBody();
 							modalBody.add(new Span(
-									"Email y/o contraseña incorrectos"));
+									"Error al registrar el usuario!"));
 
 							final ModalFooter modalFooter = new ModalFooter();
 							modalFooter.add(new Button("Cerrar",

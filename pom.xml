@@ -19,7 +19,8 @@
 		<gwtbootstrap.version>0.9.1</gwtbootstrap.version>
 		<validation.version>1.0.0.GA</validation.version>
 		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
-		<slf4j.version>1.7.9</slf4j.version>		
+		<slf4j.version>1.7.9</slf4j.version>
+		<commons-beanutils.version>1.9.2</commons-beanutils.version>
 		<!-- server -->
 		<guice.version>3.0</guice.version>
 		<appengine.version>1.9.22</appengine.version>
@@ -162,15 +163,15 @@
 								<fileset>
 									<directory>${project.build.directory}/${project.build.finalName}/WEB-INF/lib</directory>
 									<includes>
-										<!--  <include>gwt-user*jar</include> --> 
-										<include>gwt-dev*jar</include> 
+										<!-- <include>gwt-user*jar</include> -->
+										<include>gwt-dev*jar</include>
 									</includes>
 								</fileset>
 							</filesets>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>  
+			</plugin>
 		</plugins>
 	</build>
 
@@ -274,15 +275,15 @@
 			<version>${gwtbootstrap.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.gwtbootstrap3</groupId>
 			<artifactId>gwtbootstrap3-extras</artifactId>
 			<version>${gwtbootstrap.version}</version>
 			<scope>provided</scope>
-		</dependency>		
-		
-				<!-- JSR-303 Bean Validation -->
+		</dependency>
+
+		<!-- JSR-303 Bean Validation -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
@@ -310,7 +311,12 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

@@ -1,29 +1,28 @@
-package org.javahispano.javaleague.domain;
+/**
+ * 
+ */
+package org.javahispano.javaleague.shared.dispatch;
 
-import com.googlecode.objectify.annotation.Entity;
+import com.gwtplatform.dispatch.rpc.shared.UnsecuredActionImpl;
 
 /**
- * An application user, named with a prefix to avoid confusion with GAE User
- * type
+ * @author adou
+ *
  */
-@Entity
-public class AppUser extends DatastoreObject {
+public class RegisterUserAction extends UnsecuredActionImpl<RegisterUserResult> {
 	private String email;
 	private String password;
 	private String userName;
-
-	public AppUser() {
-		// No-arg constructor required by Objectify
-	}
-
-	public AppUser(String userEmail) {
-		this.email = userEmail;
-		this.password = "";
-		this.userName = "";
+	
+	@SuppressWarnings("unused")
+	private RegisterUserAction() {
+		this.email = null;
+		this.password = null;
+		this.userName = null;
 	}
 	
-	public AppUser(String userEmail, String password, String userName) {
-		this.email = userEmail;
+	public RegisterUserAction(String email, String password, String userName) {
+		this.email = email;
 		this.password = password;
 		this.userName = userName;
 	}
@@ -51,6 +50,6 @@ public class AppUser extends DatastoreObject {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
-	
+
+
 }

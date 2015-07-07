@@ -17,17 +17,17 @@
 
 	<b:Panel>
 		<b:PanelHeader>
-			<b:Heading size="H3" text="Login / Registro" />
+			<b:Heading size="H3" text="Registro" />
 		</b:PanelHeader>
 		<b:PanelBody>
 			<b:Column size="SM_6">
 				<b:Panel>
 					<b:PanelHeader>
-						<b:Heading size="H3" text="Login" />
+						<b:Heading size="H3" text="Registro" />
 					</b:PanelHeader>
 					<b:PanelBody ui:field="body" />
 					<b:PanelFooter addStyleNames="{style.footer}">
-						<b:Button type="PRIMARY" ui:field="loginButton">Login</b:Button>
+						<b:Button type="PRIMARY" ui:field="loginButton">Registro</b:Button>
 						<b:Button type="DANGER" ui:field="resetButton">Borrar</b:Button>
 					</b:PanelFooter>
 				</b:Panel>
