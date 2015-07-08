@@ -25,7 +25,24 @@
 					<b:PanelHeader>
 						<b:Heading size="H3" text="Login" />
 					</b:PanelHeader>
-					<b:PanelBody ui:field="body" />
+					<b:PanelBody ui:field="body">
+						<b:Form ui:field="formLogin">
+							<b:FieldSet>
+								<b:FormGroup>
+									<b:FormLabel for="email" showRequiredIndicator="true">Email</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:TextBox allowBlank="false" validateOnBlur="true"
+										b:id="email" ui:field="email" />
+								</b:FormGroup>
+								<b:FormGroup>
+									<b:FormLabel for="password" showRequiredIndicator="true">Contraseña</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:Input type="PASSWORD" ui:field="password" b:id="password"
+										allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+							</b:FieldSet>
+						</b:Form>
+					</b:PanelBody>
 					<b:PanelFooter addStyleNames="{style.footer}">
 						<b:Button type="PRIMARY" ui:field="loginButton">Login</b:Button>
 						<b:Button type="DANGER" ui:field="resetButton">Borrar</b:Button>
@@ -42,7 +59,40 @@
 					<b:PanelHeader>
 						<b:Heading size="H3" text="Registro" />
 					</b:PanelHeader>
-					<b:PanelBody ui:field="bodyRegister" />
+					<b:PanelBody ui:field="bodyRegister">
+						<b:Form ui:field="formRegister">
+							<b:FieldSet>
+
+								<b:FormGroup>
+									<b:FormLabel for="username" showRequiredIndicator="true">Nombre entrenador</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:TextBox b:id="username" ui:field="username" allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+								<b:FormGroup>
+									<b:FormLabel for="emailRegister" showRequiredIndicator="true">Email</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:TextBox b:id="emailRegister" ui:field="emailRegister" allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+								<b:FormGroup>
+									<b:FormLabel for="confirmEmail" showRequiredIndicator="true">Repite el Email</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:TextBox b:id="confirmEmail" ui:field="confirmEmail" allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+								<b:FormGroup>
+									<b:FormLabel for="passwordRegister" showRequiredIndicator="true">Contraseña</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:Input type="PASSWORD" ui:field="passwordRegister"
+										b:id="passwordRegister" allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+								<b:FormGroup>
+									<b:FormLabel for="confirmPassword" showRequiredIndicator="true">Repite la contraseña</b:FormLabel>
+									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
+									<b:Input type="PASSWORD" ui:field="confirmPassword"
+										b:id="confirmPassword" allowBlank="false" validateOnBlur="true" />
+								</b:FormGroup>
+							</b:FieldSet>
+						</b:Form>
+					</b:PanelBody>
 					<b:PanelFooter addStyleNames="{style.footer}">
 						<b:Button type="PRIMARY" ui:field="registerButton">Registro</b:Button>
 						<b:Button type="DANGER" ui:field="resetRegisterButton">Borrar</b:Button>

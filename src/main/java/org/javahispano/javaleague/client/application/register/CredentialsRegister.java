@@ -26,12 +26,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.javahispano.javaleague.client.validation.FieldMatch;
-
-@FieldMatch.List({
-    @FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),
-    @FieldMatch(first = "email", second = "confirmEmail", message = "The email fields must match")
-})
 public class CredentialsRegister implements Serializable {
 
 	private static final long serialVersionUID = -1626677647077707091L;

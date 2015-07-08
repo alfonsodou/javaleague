@@ -6,14 +6,6 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name='com.google.gwt.inject.Inject' />
 
-	<!-- For JSR-303 Bean Validation -->
-	<inherits name="org.hibernate.validator.HibernateValidator" />
-	<replace-with
-		class="org.javahispano.javaleague.client.validation.FormsValidationFactory">
-		<when-type-is class="javax.validation.ValidatorFactory" />
-	</replace-with>
-
-
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />
 	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
