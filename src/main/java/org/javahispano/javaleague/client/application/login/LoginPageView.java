@@ -116,6 +116,8 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 						if (!confirmPassword.getText().equals(valueStr)) {
 							result.add(new BasicEditorError(passwordRegister,
 									value, "Las contraseñas no coinciden"));
+							result.add(new BasicEditorError(confirmPassword,
+									value, "Las contraseñas no coinciden"));
 						}
 
 						return result;
@@ -139,6 +141,9 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 						if (!confirmEmail.getText().equals(valueStr)) {
 							result.add(new BasicEditorError(emailRegister,
 									value, "El email no coincide"));
+							result.add(new BasicEditorError(confirmEmail,
+									value, "El email no coincide"));
+
 						}
 
 						return result;

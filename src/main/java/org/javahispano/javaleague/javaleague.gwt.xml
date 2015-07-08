@@ -14,7 +14,7 @@
 	<!-- Other module inherits -->
 	<inherits name='com.gwtplatform.dispatch.Dispatch' />
 	<inherits name="com.arcbees.analytics.Analytics" />
-	<inherits name="com.wallissoftware.pushstate.PushState" />
+	<!--  <inherits name="com.wallissoftware.pushstate.PushState" /> -->
 	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
 	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 

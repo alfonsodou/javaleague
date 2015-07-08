@@ -5,9 +5,6 @@ public class NameTokens {
     // Login Page
     public static final String LOGIN = "/login";
     
-    // Register Page
-    public static final String REGISTER = "/register";
-    
     // Tournament Page
     public static final String TOURNAMENT = "/tournament";
     
@@ -26,10 +23,7 @@ public class NameTokens {
     public static String getLogin() {
     	return LOGIN;
     }
-    
-    public static String getRegister() {
-    	return REGISTER;
-    }
+
 
 	public static String getTournament() {
 		return TOURNAMENT;

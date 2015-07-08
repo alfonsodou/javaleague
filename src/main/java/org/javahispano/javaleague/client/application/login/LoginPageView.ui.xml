@@ -64,9 +64,9 @@
 							<b:FieldSet>
 
 								<b:FormGroup>
-									<b:FormLabel for="username" showRequiredIndicator="true">Nombre entrenador</b:FormLabel>
+									<b:FormLabel for="userName" showRequiredIndicator="true">Nombre entrenador</b:FormLabel>
 									<b:InlineHelpBlock iconType="EXCLAMATION_TRIANGLE" />
-									<b:TextBox b:id="username" ui:field="username" allowBlank="false" validateOnBlur="true" />
+									<b:TextBox b:id="userName" ui:field="userName" allowBlank="false" validateOnBlur="true" />
 								</b:FormGroup>
 								<b:FormGroup>
 									<b:FormLabel for="emailRegister" showRequiredIndicator="true">Email</b:FormLabel>
