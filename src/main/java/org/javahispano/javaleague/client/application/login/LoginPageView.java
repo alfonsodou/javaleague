@@ -3,6 +3,8 @@
  */
 package org.javahispano.javaleague.client.application.login;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
@@ -145,7 +148,6 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 
 						return result;
 					}
-
 				});
 
 		confirmPassword
@@ -255,8 +257,28 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 	public void onRegisterClick(ClickEvent event) {
 		if (formRegister.validate()) {
 			getUiHandlers().doRegister(emailRegister.getText(),
-					passwordRegister.getText(), userName.getText());
+					digest_MD5(passwordRegister.getText()), userName.getText());
 		}
 	}
 
+	public String digest_MD5(String password) {
+		MessageDigest crypt = null;
+
+		try {
+			crypt = java.security.MessageDigest.getInstance("MD5");
+		} catch (NoSuchAlgorithmException e) {
+			Window.alert("MD5 not supported");
+			return null;
+		}
+
+		byte[] digested = crypt.digest(password.getBytes());
+
+		String crypt_password = new String();
+
+		// Converts bytes to string
+		for (byte b : digested)
+			crypt_password += Integer.toHexString(0xFF & b);
+
+		return crypt_password;
+	}
 }
