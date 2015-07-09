@@ -16,6 +16,8 @@ import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.EditorError;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -116,8 +118,6 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 						if (!confirmPassword.getText().equals(valueStr)) {
 							result.add(new BasicEditorError(passwordRegister,
 									value, "Las contraseñas no coinciden"));
-							result.add(new BasicEditorError(confirmPassword,
-									value, "Las contraseñas no coinciden"));
 						}
 
 						return result;
@@ -141,9 +141,6 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 						if (!confirmEmail.getText().equals(valueStr)) {
 							result.add(new BasicEditorError(emailRegister,
 									value, "El email no coincide"));
-							result.add(new BasicEditorError(confirmEmail,
-									value, "El email no coincide"));
-
 						}
 
 						return result;
@@ -151,6 +148,82 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 
 				});
 
+		confirmPassword
+				.addValidator(new org.gwtbootstrap3.client.ui.form.validator.Validator<String>() {
+
+					@Override
+					public int getPriority() {
+						return Priority.MEDIUM;
+					}
+
+					@Override
+					public List<EditorError> validate(Editor<String> editor,
+							String value) {
+						List<EditorError> result = new ArrayList<EditorError>();
+						String valueStr = value == null ? "" : value.toString();
+						if (!passwordRegister.getText().equals(valueStr)) {
+							result.add(new BasicEditorError(confirmPassword,
+									value, "Las contraseñas no coinciden"));
+						}
+
+						return result;
+					}
+
+				});
+
+		confirmEmail
+				.addValidator(new org.gwtbootstrap3.client.ui.form.validator.Validator<String>() {
+
+					@Override
+					public int getPriority() {
+						return Priority.MEDIUM;
+					}
+
+					@Override
+					public List<EditorError> validate(Editor<String> editor,
+							String value) {
+						List<EditorError> result = new ArrayList<EditorError>();
+						String valueStr = value == null ? "" : value.toString();
+						if (!emailRegister.getText().equals(valueStr)) {
+							result.add(new BasicEditorError(confirmEmail,
+									value, "El email no coincide"));
+						}
+
+						return result;
+					}
+
+				});
+
+		emailRegister.addValueChangeHandler(new ValueChangeHandler<String>() {
+			@Override
+			public void onValueChange(ValueChangeEvent<String> event) {
+				formRegister.validate();
+			}
+		});
+
+		passwordRegister
+				.addValueChangeHandler(new ValueChangeHandler<String>() {
+					@Override
+					public void onValueChange(ValueChangeEvent<String> event) {
+						formRegister.validate();
+					}
+
+				});
+
+		confirmEmail.addValueChangeHandler(new ValueChangeHandler<String>() {
+			@Override
+			public void onValueChange(ValueChangeEvent<String> event) {
+				formRegister.validate();
+			}
+		});
+
+		confirmPassword.addValueChangeHandler(new ValueChangeHandler<String>() {
+			@Override
+			public void onValueChange(ValueChangeEvent<String> event) {
+				formRegister.validate();
+			}
+
+		});
 	}
 
 	@Override
