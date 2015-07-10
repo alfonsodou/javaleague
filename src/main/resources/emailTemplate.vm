@@ -1,0 +1,8 @@
+<html>
+<body>
+<p>Hola $username!</p>
+<p>Gracias por registrarte en <b>javaLeague</b>!. Pulsa en este <a href="$url">enlace</a> para verificar tu cuenta de correo y activar tu usuario.</p>
+<p><b>Bienvenido!</b></p>
+<p>Si has recibido este correo por error, ponte en contacto con <a href="email:javaleague@gmail.com">javaleague@gmail.com</a> para que podamos solucionarlo. Gracias.</p>
+</body>
+</html>

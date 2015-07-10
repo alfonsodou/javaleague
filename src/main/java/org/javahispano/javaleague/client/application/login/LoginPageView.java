@@ -249,7 +249,7 @@ public class LoginPageView extends ViewWithUiHandlers<LoginUiHandlers>
 	public void onLoginClick(ClickEvent event) {
 		if (formLogin.validate()) {
 			result.setInnerText(email.getText() + " :: " + password.getText());
-			getUiHandlers().doLogin(email.getText(), password.getText());
+			getUiHandlers().doLogin(email.getText(), digest_MD5(password.getText()));
 		}
 	}
 

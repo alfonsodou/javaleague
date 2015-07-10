@@ -11,6 +11,8 @@ public class AppUser extends DatastoreObject {
 	private String email;
 	private String password;
 	private String userName;
+	private boolean active;
+	private String tokenActivate;
 
 	public AppUser() {
 		// No-arg constructor required by Objectify
@@ -20,12 +22,16 @@ public class AppUser extends DatastoreObject {
 		this.email = userEmail;
 		this.password = "";
 		this.userName = "";
+		this.active = false;
+		this.tokenActivate = "";
 	}
 	
 	public AppUser(String userEmail, String password, String userName) {
 		this.email = userEmail;
 		this.password = password;
 		this.userName = userName;
+		this.active = false;
+		this.tokenActivate = "";
 	}
 
 	public String getEmail() {
@@ -50,6 +56,22 @@ public class AppUser extends DatastoreObject {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public String getTokenActivate() {
+		return tokenActivate;
+	}
+
+	public void setTokenActivate(String tokenActivate) {
+		this.tokenActivate = tokenActivate;
 	}
 	
 	
