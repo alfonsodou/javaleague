@@ -63,7 +63,7 @@ public class RegisterUserHandler implements
 						arg0.getUserName());
 				appUser.setTokenActivate(userTokenGenerator.nextSessionId());
 				appUserDao.put(appUser);
-				VelocityContext context = new VelocityContext();
+				/*VelocityContext context = new VelocityContext();
 				context.put("username", appUser.getUserName());
 				context.put("url",
 						ServletUtils.getBaseUrl() + "/authenticateUser?token="
@@ -91,7 +91,18 @@ public class RegisterUserHandler implements
 				msg.setContent(writer.toString(), "text/html; charset=utf-8");
 				msg.setSentDate(new Date());
 
-				Transport.send(msg);
+				Transport.send(msg);*/
+				
+				Properties props = new Properties();
+				Session session = Session.getDefaultInstance(props, null);
+				
+	            Message msg = new MimeMessage(session);
+	            msg.setFrom(new InternetAddress("javaleague@gmail.com", "Example.com Admin"));
+	            msg.addRecipient(Message.RecipientType.TO,
+	                             new InternetAddress("alfonsodou@gmail.com", "Mr. User"));
+	            msg.setSubject("Your Example.com account has been activated");
+	            msg.setText("KK");
+	            Transport.send(msg);
 
 			} else {
 				registerUserResult.setResponse("KO!");
