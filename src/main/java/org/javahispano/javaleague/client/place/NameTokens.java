@@ -14,6 +14,9 @@ public class NameTokens {
     // Rules Page
     public static final String RULES = "/rules";
     
+    // Authenticate User Page
+    public static final String AUTHENTICATE = "/authenticate";
+    
     // Getters for UiBinders
 
     public static String getHome() {
@@ -36,4 +39,10 @@ public class NameTokens {
 	public static String getRules() {
 		return RULES;
 	}
+
+	public static String getAuthenticate() {
+		return AUTHENTICATE;
+	}
+	
+	
 }

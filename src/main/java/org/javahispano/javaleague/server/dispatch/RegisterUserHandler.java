@@ -63,10 +63,10 @@ public class RegisterUserHandler implements
 						arg0.getUserName());
 				appUser.setTokenActivate(userTokenGenerator.nextSessionId());
 				appUserDao.put(appUser);
-				/*VelocityContext context = new VelocityContext();
+				VelocityContext context = new VelocityContext();
 				context.put("username", appUser.getUserName());
 				context.put("url",
-						ServletUtils.getBaseUrl() + "/authenticateUser?token="
+						ServletUtils.getBaseUrl() + "authenticateUser?token="
 								+ appUser.getTokenActivate() + "&email="
 								+ appUser.getEmail());
 
@@ -83,26 +83,15 @@ public class RegisterUserHandler implements
 
 				Message msg = new MimeMessage(session);
 				msg.setFrom(new InternetAddress("javaleague@gmail.com",
-						"Administrador javaLeague"));
+						"Administrador javaleague"));
 				msg.addRecipient(Message.RecipientType.TO, new InternetAddress(
 						appUser.getEmail(), appUser.getUserName()));
-				msg.setSubject("Bienvenido a javaLeague!");
+				msg.setSubject("Bienvenido a javaleague!");
 
 				msg.setContent(writer.toString(), "text/html; charset=utf-8");
 				msg.setSentDate(new Date());
 
-				Transport.send(msg);*/
-				
-				Properties props = new Properties();
-				Session session = Session.getDefaultInstance(props, null);
-				
-	            Message msg = new MimeMessage(session);
-	            msg.setFrom(new InternetAddress("javaleague@gmail.com", "Example.com Admin"));
-	            msg.addRecipient(Message.RecipientType.TO,
-	                             new InternetAddress("alfonsodou@gmail.com", "Mr. User"));
-	            msg.setSubject("Your Example.com account has been activated");
-	            msg.setText("KK");
-	            Transport.send(msg);
+				Transport.send(msg);
 
 			} else {
 				registerUserResult.setResponse("KO!");
