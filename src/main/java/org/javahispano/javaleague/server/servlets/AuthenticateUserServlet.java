@@ -48,7 +48,7 @@ public class AuthenticateUserServlet extends HttpServlet {
 				 * All done.
 				 */
 				resp.sendRedirect(ServletUtils.getBaseUrl(req)
-						+ "#/authenticate/{true}");
+						+ "#/authenticate/true");
 				/*
 				 * resp.sendRedirect(LoginHelper.getApplicationURL(req) +
 				 * "/authuser.jsp");
@@ -56,7 +56,7 @@ public class AuthenticateUserServlet extends HttpServlet {
 
 			} else {
 				resp.sendRedirect(ServletUtils.getBaseUrl(req)
-						+ "#/authenticate/{false}");
+						+ "#/authenticate/false");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
