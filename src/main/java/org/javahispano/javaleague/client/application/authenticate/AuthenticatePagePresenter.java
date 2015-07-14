@@ -23,12 +23,15 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 public class AuthenticatePagePresenter
 		extends
 		Presenter<AuthenticatePagePresenter.MyView, AuthenticatePagePresenter.MyProxy> {
+	
 	interface MyView extends View {
+		void viewAuthTrue(boolean view);
+		void viewAuthFalse(boolean view);
 	}
-
+	
 	@ProxyStandard
 	@NameToken({NameTokens.AUTHENTICATE + "/{isAuthenticate}", NameTokens.AUTHENTICATE})
-	interface MyProxy extends ProxyPlace<AuthenticatePagePresenter> {
+	public interface MyProxy extends ProxyPlace<AuthenticatePagePresenter> {
 	}
 
 	@Inject
@@ -42,9 +45,11 @@ public class AuthenticatePagePresenter
 
 	    String itemId = placeRequest.getParameter("isAuthenticate", "");
 	    if (itemId.equals("true")) {
-	    	
+	    	getView().viewAuthTrue(true);
+	    	getView().viewAuthFalse(false);
 	    } else {
-	    	
+	    	getView().viewAuthTrue(false);
+	    	getView().viewAuthFalse(true);	    	
 	    }
 	}
 }
