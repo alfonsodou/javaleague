@@ -15,7 +15,6 @@ import org.javahispano.javaleague.shared.dispatch.LoginUserResult;
 import org.javahispano.javaleague.shared.dispatch.RegisterUserAction;
 import org.javahispano.javaleague.shared.dispatch.RegisterUserResult;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -29,6 +28,7 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
+import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 /**
  * @author adou
@@ -66,13 +66,33 @@ public class LoginPagePresenter extends
 
 					@Override
 					public void onFailure(Throwable caught) {
-						// TODO Auto-generated method stub
+						final Modal modal = new Modal();
+						modal.setTitle("Login");
+						modal.setClosable(true);
 
+						final ModalBody modalBody = new ModalBody();
+						modalBody
+								.add(new Span(
+										"Error al conectar con el servidor. Inténtalo más tarde!"));
+
+						final ModalFooter modalFooter = new ModalFooter();
+						modalFooter.add(new Button("Cerrar",
+								new ClickHandler() {
+									@Override
+									public void onClick(final ClickEvent event) {
+										modal.hide();
+									}
+
+								}));
+
+						modal.add(modalBody);
+						modal.add(modalFooter);
+
+						modal.show();
 					}
 
 					@Override
 					public void onSuccess(LoginUserResult result) {
-						
 						if (result.getResponse().equals("KO!")) {
 							final Modal modal = new Modal();
 							modal.setTitle("Login");
@@ -92,35 +112,54 @@ public class LoginPagePresenter extends
 										}
 
 									}));
-							
+
 							modal.add(modalBody);
 							modal.add(modalFooter);
-							
-							modal.show();
-						}
-						
-						GWT.log("It's works!");
 
+							modal.show();
+						} else {
+							placeManager.revealPlace(new PlaceRequest.Builder()
+									.nameToken(NameTokens.getHome()).build());
+						}
 					}
 
 				});
 
 	}
-	
+
 	@Override
 	public void doRegister(String email, String password, String userName) {
 		dispatcher.execute(new RegisterUserAction(email, password, userName),
 				new AsyncCallback<RegisterUserResult>() {
-
 					@Override
 					public void onFailure(Throwable caught) {
-						// TODO Auto-generated method stub
+						final Modal modal = new Modal();
+						modal.setTitle("Registro");
+						modal.setClosable(true);
 
+						final ModalBody modalBody = new ModalBody();
+						modalBody
+								.add(new Span(
+										"Error al conectar con el servidor. Error al registrar el usuario!"));
+
+						final ModalFooter modalFooter = new ModalFooter();
+						modalFooter.add(new Button("Cerrar",
+								new ClickHandler() {
+									@Override
+									public void onClick(final ClickEvent event) {
+										modal.hide();
+									}
+
+								}));
+
+						modal.add(modalBody);
+						modal.add(modalFooter);
+
+						modal.show();
 					}
 
 					@Override
 					public void onSuccess(RegisterUserResult result) {
-						
 						if (result.getResponse().equals("KO!")) {
 							final Modal modal = new Modal();
 							modal.setTitle("Registro");
@@ -140,19 +179,15 @@ public class LoginPagePresenter extends
 										}
 
 									}));
-							
+
 							modal.add(modalBody);
 							modal.add(modalFooter);
-							
+
 							modal.show();
 						}
-						
-						GWT.log("It's works!");
-
 					}
-
 				});
 
 	}
-	
+
 }

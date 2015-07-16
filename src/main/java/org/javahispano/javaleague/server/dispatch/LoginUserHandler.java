@@ -44,6 +44,8 @@ public class LoginUserHandler implements
 			appUser = appUserDao.getByProperty("email", arg0.getEmail());
 			if (appUser == null) {
 				loginUserResult.setResponse("KO!");
+			} else {
+				servletContext.setAttribute("login", true);
 			}
 		} catch (TooManyResultsException e) {
 			loginUserResult.setResponse("KO!");
