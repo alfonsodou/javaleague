@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.javahispano.javaleague.domain;
+package org.javahispano.javaleague.server.domain;
 
 import java.util.Date;
 

@@ -3,7 +3,7 @@ package org.javahispano.javaleague.server.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.domain.AppUser;
 import org.javahispano.javaleague.shared.exception.TooManyResultsException;
 
 import com.google.appengine.api.users.UserService;

@@ -21,6 +21,10 @@
 		<hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
 		<slf4j.version>1.7.9</slf4j.version>
 		<velocity.version>1.7</velocity.version>
+		<resteasy.version>3.0.9.Final</resteasy.version>
+        <jbcrypt.version>0.3m</jbcrypt.version>
+        <jax-rs.version>1.1.1</jax-rs.version>
+
 		<!-- server -->
 		<guice.version>3.0</guice.version>
 		<appengine.version>1.9.22</appengine.version>
@@ -302,5 +306,29 @@
 			<version>${jukito.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		        <!-- REST -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jackson2-provider</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-guice</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>${jax-rs.version}</version>
+            <!-- Provided because RestEasy has its own implementation -->
+            <scope>provided</scope>
+        </dependency>
 	</dependencies>
 </project>

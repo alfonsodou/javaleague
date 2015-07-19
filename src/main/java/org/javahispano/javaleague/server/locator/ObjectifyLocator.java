@@ -3,9 +3,9 @@
  */
 package org.javahispano.javaleague.server.locator;
 
-import static org.javahispano.javaleague.server.service.OfyService.ofy;
+import static org.javahispano.javaleague.server.dao.objectify.OfyService.ofy;
 
-import org.javahispano.javaleague.domain.DatastoreObject;
+import org.javahispano.javaleague.server.domain.DatastoreObject;
 
 import com.google.web.bindery.requestfactory.shared.Locator;
 

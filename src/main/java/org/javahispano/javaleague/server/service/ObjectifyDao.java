@@ -1,7 +1,7 @@
 package org.javahispano.javaleague.server.service;
 
-import static org.javahispano.javaleague.server.service.OfyService.factory;
-import static org.javahispano.javaleague.server.service.OfyService.ofy;
+import static org.javahispano.javaleague.server.dao.objectify.OfyService.factory;
+import static org.javahispano.javaleague.server.dao.objectify.OfyService.ofy;
 
 import java.beans.Transient;
 import java.lang.reflect.Field;

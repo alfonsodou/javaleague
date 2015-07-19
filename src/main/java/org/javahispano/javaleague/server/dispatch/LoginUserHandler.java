@@ -6,7 +6,7 @@ package org.javahispano.javaleague.server.dispatch;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.domain.AppUser;
 import org.javahispano.javaleague.server.service.AppUserDao;
 import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
 import org.javahispano.javaleague.shared.dispatch.LoginUserResult;

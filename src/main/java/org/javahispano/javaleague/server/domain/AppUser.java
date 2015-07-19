@@ -1,4 +1,4 @@
-package org.javahispano.javaleague.domain;
+package org.javahispano.javaleague.server.domain;
 
 import com.googlecode.objectify.annotation.Entity;
 

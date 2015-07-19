@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.domain.AppUser;
 import org.javahispano.javaleague.server.service.AppUserDao;
 import org.javahispano.javaleague.server.utils.ServletUtils;
 

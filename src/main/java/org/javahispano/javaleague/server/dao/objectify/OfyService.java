@@ -1,10 +1,10 @@
 /**
  * 
  */
-package org.javahispano.javaleague.server.service;
+package org.javahispano.javaleague.server.dao.objectify;
 
 
-import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.domain.AppUser;
 
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;

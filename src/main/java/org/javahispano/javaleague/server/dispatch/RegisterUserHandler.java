@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
-import org.javahispano.javaleague.domain.AppUser;
+import org.javahispano.javaleague.server.domain.AppUser;
 import org.javahispano.javaleague.server.service.AppUserDao;
 import org.javahispano.javaleague.server.utils.ServletUtils;
 import org.javahispano.javaleague.server.utils.SessionIdentifierGenerator;
