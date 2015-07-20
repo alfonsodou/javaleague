@@ -116,8 +116,7 @@
 					<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
 					<appEngineVersion>${appengine.version}</appEngineVersion>
 					<appEngineHome>${appengine.home}</appEngineHome>
-					<extraJvmArgs>-Dappengine.sdk.root=${appengine.home} -Xss1024K
-						-Xmx1024M</extraJvmArgs>
+					<extraJvmArgs>-Dappengine.sdk.root=${appengine.home} -Xss1024K -Xmx1024M</extraJvmArgs>
 					<copyWebapp>true</copyWebapp>
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<runTarget>javaleague.html</runTarget>
@@ -190,7 +189,7 @@
 			<version>${gwt.version}</version>
 		</dependency>
 
-		<!-- GWT-Platform -->
+		<!-- GWTP-Platform -->
 		<dependency>
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-mvp-client</artifactId>
@@ -211,6 +210,25 @@
 			<artifactId>gwtp-dispatch-rpc-shared</artifactId>
 			<version>${gwtp.version}</version>
 		</dependency>
+		        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rest</artifactId>
+            <version>${gwtp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform.extensions</groupId>
+            <artifactId>dispatch-rest-delegates</artifactId>
+            <version>${gwtp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rest-shared</artifactId>
+            <version>${gwtp.version}</version>
+            <!-- Some classes needed by server code to share resource interfaces -->
+            <scope>compile</scope>
+        </dependency>
 
 		<!-- DI -->
 		<dependency>
