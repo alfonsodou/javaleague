@@ -22,8 +22,10 @@
 		<slf4j.version>1.7.9</slf4j.version>
 		<velocity.version>1.7</velocity.version>
 		<resteasy.version>3.0.9.Final</resteasy.version>
-        <jbcrypt.version>0.3m</jbcrypt.version>
-        <jax-rs.version>1.1.1</jax-rs.version>
+		<jbcrypt.version>0.3m</jbcrypt.version>
+		<jax-rs.version>1.1.1</jax-rs.version>
+		<gwtquery.version>1.4.2</gwtquery.version>
+		<objectify-gwt.version>1.2.1</objectify-gwt.version>
 
 		<!-- server -->
 		<guice.version>3.0</guice.version>
@@ -114,7 +116,8 @@
 					<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
 					<appEngineVersion>${appengine.version}</appEngineVersion>
 					<appEngineHome>${appengine.home}</appEngineHome>
-					<extraJvmArgs>-Dappengine.sdk.root=${appengine.home} -Xss1024K -Xmx1024M</extraJvmArgs>
+					<extraJvmArgs>-Dappengine.sdk.root=${appengine.home} -Xss1024K
+						-Xmx1024M</extraJvmArgs>
 					<copyWebapp>true</copyWebapp>
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<runTarget>javaleague.html</runTarget>
@@ -255,38 +258,45 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Other -->
+		<dependency>
+			<groupId>com.googlecode.gwtquery</groupId>
+			<artifactId>gwtquery</artifactId>
+			<version>${gwtquery.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.googlecode.objectify</groupId>
 			<artifactId>objectify</artifactId>
 			<version>${objectify.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify-gwt</artifactId>
+			<version>${objectify-gwt.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.arcbees.analytics</groupId>
 			<artifactId>universal-analytics</artifactId>
 			<version>${universal-analytics.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.wallissoftware</groupId>
 			<artifactId>gwt-pushstate</artifactId>
 			<version>${gwt-pushstate.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.gwtbootstrap3</groupId>
 			<artifactId>gwtbootstrap3</artifactId>
 			<version>${gwtbootstrap.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.gwtbootstrap3</groupId>
 			<artifactId>gwtbootstrap3-extras</artifactId>
 			<version>${gwtbootstrap.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
@@ -306,29 +316,29 @@
 			<version>${jukito.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
-		        <!-- REST -->
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jaxrs</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jackson2-provider</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-guice</artifactId>
-            <version>${resteasy.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>${jax-rs.version}</version>
-            <!-- Provided because RestEasy has its own implementation -->
-            <scope>provided</scope>
-        </dependency>
+
+		<!-- REST -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${resteasy.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson2-provider</artifactId>
+			<version>${resteasy.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-guice</artifactId>
+			<version>${resteasy.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>${jax-rs.version}</version>
+			<!-- Provided because RestEasy has its own implementation -->
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
