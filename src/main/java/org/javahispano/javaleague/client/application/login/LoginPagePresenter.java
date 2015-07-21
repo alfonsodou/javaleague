@@ -27,7 +27,8 @@ import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
-import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
+import com.gwtplatform.mvp.client.annotations.NoGatekeeper;
+import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -42,19 +43,20 @@ public class LoginPagePresenter extends
 	public interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
 	}
 
-	@ProxyCodeSplit
+	@ProxyStandard
 	@NameToken(NameTokens.LOGIN)
-	public interface MyProxy extends ProxyPlace<LoginPagePresenter> {
+	@NoGatekeeper
+	interface MyProxy extends ProxyPlace<LoginPagePresenter> {
 	}
 
 	private final DispatchAsync dispatcher;
 	private final PlaceManager placeManager;
-    private final ResourceDelegate<SessionResource> sessionResource;
+	private final ResourceDelegate<SessionResource> sessionResource;
 
 	@Inject
 	LoginPagePresenter(EventBus eventBus, MyView view, MyProxy proxy,
 			PlaceManager placeManager, DispatchAsync dispatcher,
-            ResourceDelegate<SessionResource> sessionResource) {
+			ResourceDelegate<SessionResource> sessionResource) {
 		super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
 
 		this.placeManager = placeManager;

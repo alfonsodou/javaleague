@@ -1,5 +1,6 @@
 package org.javahispano.javaleague.client.application;
 
+
 import org.javahispano.javaleague.client.application.authenticate.AuthenticateModule;
 import org.javahispano.javaleague.client.application.home.HomeModule;
 import org.javahispano.javaleague.client.application.login.LoginModule;
