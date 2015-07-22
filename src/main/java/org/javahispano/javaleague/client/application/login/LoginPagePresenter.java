@@ -3,6 +3,8 @@
  */
 package org.javahispano.javaleague.client.application.login;
 
+import java.util.logging.Logger;
+
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.ModalBody;
@@ -10,6 +12,8 @@ import org.gwtbootstrap3.client.ui.ModalFooter;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.javahispano.javaleague.client.application.ApplicationPresenter;
 import org.javahispano.javaleague.client.place.NameTokens;
+import org.javahispano.javaleague.client.resources.LoginMessages;
+import org.javahispano.javaleague.client.security.CurrentUser;
 import org.javahispano.javaleague.shared.api.SessionResource;
 import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
 import org.javahispano.javaleague.shared.dispatch.LoginUserResult;
@@ -40,6 +44,7 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 public class LoginPagePresenter extends
 		Presenter<LoginPagePresenter.MyView, LoginPagePresenter.MyProxy>
 		implements LoginUiHandlers {
+
 	public interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
 	}
 
@@ -49,19 +54,27 @@ public class LoginPagePresenter extends
 	interface MyProxy extends ProxyPlace<LoginPagePresenter> {
 	}
 
+    private static final Logger LOGGER = Logger.getLogger(LoginPagePresenter.class.getName());
+    private static final int REMEMBER_ME_DAYS = 14;
+    
 	private final DispatchAsync dispatcher;
 	private final PlaceManager placeManager;
 	private final ResourceDelegate<SessionResource> sessionResource;
+    private final CurrentUser currentUser;
+    private final LoginMessages messages;
 
 	@Inject
 	LoginPagePresenter(EventBus eventBus, MyView view, MyProxy proxy,
 			PlaceManager placeManager, DispatchAsync dispatcher,
-			ResourceDelegate<SessionResource> sessionResource) {
+			ResourceDelegate<SessionResource> sessionResource,
+			CurrentUser currentUser, LoginMessages messages) {
 		super(eventBus, view, proxy, ApplicationPresenter.SLOT_SetMainContent);
 
 		this.placeManager = placeManager;
 		this.dispatcher = dispatcher;
 		this.sessionResource = sessionResource;
+        this.currentUser = currentUser;
+        this.messages = messages;
 
 		getView().setUiHandlers(this);
 	}

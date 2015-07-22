@@ -1,16 +1,24 @@
 package org.javahispano.javaleague.server.guice;
 
-import org.javahispano.javaleague.server.dispatch.LoginUserHandler;
-import org.javahispano.javaleague.server.dispatch.RegisterUserHandler;
-import org.javahispano.javaleague.shared.dispatch.LoginUserAction;
-import org.javahispano.javaleague.shared.dispatch.RegisterUserAction;
+import javax.inject.Singleton;
 
-import com.gwtplatform.dispatch.rpc.server.guice.HandlerModule;
+import org.javahispano.javaleague.server.api.ApiModule;
+import org.javahispano.javaleague.server.authentication.BCryptPasswordSecurity;
+import org.javahispano.javaleague.server.authentication.PasswordSecurity;
+import org.javahispano.javaleague.server.dispatch.DispatchModule;
 
-public class ServerModule extends HandlerModule {
-    @Override
-    protected void configureHandlers() {
-    	bindHandler(LoginUserAction.class, LoginUserHandler.class);
-    	bindHandler(RegisterUserAction.class, RegisterUserHandler.class);
-    }
+import com.google.inject.AbstractModule;
+import com.googlecode.objectify.ObjectifyFilter;
+
+public class ServerModule extends AbstractModule {
+
+	@Override
+	protected void configure() {
+		install(new ApiModule());
+		install(new DispatchModule());
+
+		bind(PasswordSecurity.class).to(BCryptPasswordSecurity.class).in(
+				Singleton.class);
+		bind(ObjectifyFilter.class).in(Singleton.class);
+	}
 }

@@ -3,10 +3,9 @@
         "https://raw.githubusercontent.com/gwtproject/gwt/2.7.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="javaleague">
 	<!-- Inherit the core Web Toolkit stuff. -->
-    <inherits name="com.gwtplatform.dispatch.rest.DispatchRest"/>
-    <inherits name="com.gwtplatform.dispatch.rest.delegates.ResourceDelegate"/>
-    <inherits name="com.gwtplatform.mvp.MvpWithFormFactor"/>
-    <inherits name="com.gwtplatform.dispatch.rpc.DispatchRpc"/>	
+	<inherits name="com.gwtplatform.dispatch.rest.DispatchRest" />
+	<inherits name="com.gwtplatform.dispatch.rest.delegates.ResourceDelegate" />
+	<inherits name="com.gwtplatform.dispatch.rpc.DispatchRpc" />
 
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />
@@ -27,10 +26,12 @@
 	<extend-configuration-property name="cachemanifest_static_files"
 		value="/javaleague/javaleague.html" />
 
-	<set-configuration-property name="gin.ginjector.modules"
+	<extend-configuration-property name="gin.ginjector.modules"
 		value="org.javahispano.javaleague.client.gin.ClientModule" />
 
 	<inherits name="org.javahispano.javaleague.client.Resources" />
+
+	<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
 
 	<source path='client' />
 	<source path='shared' />

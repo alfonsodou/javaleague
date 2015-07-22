@@ -12,7 +12,7 @@
 	<properties>
 		<!-- client -->
 		<gwt.version>2.7.0</gwt.version>
-		<gwtp.version>1.4</gwtp.version>
+		<gwtp.version>1.5-SNAPSHOT</gwtp.version>
 		<gin.version>2.1.2</gin.version>
 		<universal-analytics.version>2.1</universal-analytics.version>
 		<gwt-pushstate.version>2.0.0</gwt-pushstate.version>
@@ -210,25 +210,25 @@
 			<artifactId>gwtp-dispatch-rpc-shared</artifactId>
 			<version>${gwtp.version}</version>
 		</dependency>
-		        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-rest</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform.extensions</groupId>
-            <artifactId>dispatch-rest-delegates</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-rest-shared</artifactId>
-            <version>${gwtp.version}</version>
-            <!-- Some classes needed by server code to share resource interfaces -->
-            <scope>compile</scope>
-        </dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rest</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform.extensions</groupId>
+			<artifactId>dispatch-rest-delegates</artifactId>
+			<version>${gwtp.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-rest-shared</artifactId>
+			<version>${gwtp.version}</version>
+			<!-- Some classes needed by server code to share resource interfaces -->
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- DI -->
 		<dependency>
@@ -319,6 +319,11 @@
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
 			<version>${velocity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>${jbcrypt.version}</version>
 		</dependency>
 
 		<!-- Test -->

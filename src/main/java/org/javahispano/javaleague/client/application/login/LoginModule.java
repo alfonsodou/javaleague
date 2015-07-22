@@ -7,5 +7,7 @@ public class LoginModule extends AbstractPresenterModule {
     protected void configure() {
         bindPresenter(LoginPagePresenter.class, LoginPagePresenter.MyView.class, LoginPageView.class,
                 LoginPagePresenter.MyProxy.class);
+        
+        bind(LoginUiHandlers.class).to(LoginPagePresenter.class);
     }
 }

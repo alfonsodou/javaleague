@@ -19,6 +19,9 @@ public class NameTokens {
     
     public static final String UNAUTHORIZED = "/unauthorized";
     
+    public static String getOnLoginDefaultPage() {
+        return TOURNAMENT;
+    }
     // Getters for UiBinders
 
     public static String getHome() {
