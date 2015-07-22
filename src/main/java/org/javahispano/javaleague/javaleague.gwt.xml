@@ -3,20 +3,17 @@
         "https://raw.githubusercontent.com/gwtproject/gwt/2.7.0/distro-source/core/src/gwt-module.dtd">
 <module rename-to="javaleague">
 	<!-- Inherit the core Web Toolkit stuff. -->
-	<inherits name="com.gwtplatform.dispatch.rest.DispatchRest" />
-	<inherits name="com.gwtplatform.dispatch.rest.delegates.ResourceDelegate" />
-	<inherits name="com.gwtplatform.dispatch.rpc.DispatchRpc" />
+    <inherits name="com.gwtplatform.dispatch.rest.DispatchRest"/>
+    <inherits name="com.gwtplatform.dispatch.rest.delegates.ResourceDelegate"/>
+    <inherits name="com.gwtplatform.mvp.MvpWithFormFactor"/>
+    <inherits name="com.gwtplatform.dispatch.rpc.DispatchRpc"/>	
 
 	<!-- Default css -->
 	<inherits name='com.google.gwt.user.theme.standard.Standard' />
-	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
 
 	<!-- Other module inherits -->
 	<inherits name="com.arcbees.analytics.Analytics" />
-	<!-- <inherits name="com.wallissoftware.pushstate.PushState" /> -->
 	<inherits name="org.gwtbootstrap3.GwtBootstrap3" />
-	<inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' />
 	<inherits name="com.google.gwt.query.Query" />
 
 	<!-- Validation and locale dependencies. -->
@@ -30,16 +27,11 @@
 	<extend-configuration-property name="cachemanifest_static_files"
 		value="/javaleague/javaleague.html" />
 
-	<source path='client' />
-	<source path='shared' />
-
 	<set-configuration-property name="gin.ginjector.modules"
 		value="org.javahispano.javaleague.client.gin.ClientModule" />
 
 	<inherits name="org.javahispano.javaleague.client.Resources" />
 
-	<!-- Specify the app entry point class. -->
-	<!-- <entry-point class="org.javahispano.javaleague.client.JavaleagueEntryPoint" 
-		/> -->
-
+	<source path='client' />
+	<source path='shared' />
 </module>

@@ -17,6 +17,8 @@ public class NameTokens {
     // Authenticate User Page
     public static final String AUTHENTICATE = "/authenticate";
     
+    public static final String UNAUTHORIZED = "/unauthorized";
+    
     // Getters for UiBinders
 
     public static String getHome() {
@@ -42,6 +44,10 @@ public class NameTokens {
 
 	public static String getAuthenticate() {
 		return AUTHENTICATE;
+	}
+
+	public static String getUnauthorized() {
+		return UNAUTHORIZED;
 	}
 	
 	

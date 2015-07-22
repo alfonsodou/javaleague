@@ -14,7 +14,7 @@
  * the License.
  */
 
-package org.javahispano.javaleague.client.dispatch;
+package org.javahispano.javaleague.client.dispatch.rest;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

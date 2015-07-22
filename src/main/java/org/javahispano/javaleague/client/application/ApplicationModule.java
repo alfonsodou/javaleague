@@ -13,6 +13,7 @@ public class ApplicationModule extends AbstractPresenterModule {
         install(new HomeModule());
         install(new LoginModule());
         install(new AuthenticateModule());
+        install(new UnauthorizedModule());
 
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationView.class,
                 ApplicationPresenter.MyProxy.class);

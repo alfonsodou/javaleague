@@ -21,7 +21,11 @@ import org.javahispano.javaleague.shared.dto.CurrentUserDto;
 import com.gwtplatform.dispatch.rpc.shared.Result;
 
 public class LogInResult implements Result {
-    private ActionType actionType;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4770413497223161539L;
+	private ActionType actionType;
     private CurrentUserDto currentUserDto;
     private String loggedInCookie;
 
